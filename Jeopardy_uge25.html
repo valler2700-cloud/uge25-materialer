@@ -159,6 +159,7 @@
     </div>
     <div class="tools">
       <button class="btn ghost" id="goalsBtn">🎯 Læringsmål</button>
+      <button class="btn ghost" id="roundBtn">🔁 Runde 1 ▸ 2</button>
       <button class="btn ghost" id="addTeam">＋ Tilføj hold</button>
       <button class="btn gold" id="reset">↺ Nyt spil</button>
     </div>
@@ -198,7 +199,7 @@
 
 <script>
 /* ---------- Data ---------- */
-const CATEGORIES = [
+const ROUND1 = [
   { name:"Matematik", items:[
     {v:100, q:"Hvor mange flader har en terning?", a:"6"},
     {v:200, q:"Hvad er rumfanget af en terning med sidelængden 3 cm?", a:"27 cm³", note:"3 × 3 × 3"},
@@ -243,6 +244,53 @@ const CATEGORIES = [
   ]},
 ];
 
+const ROUND2 = [
+  { name:"Matematik", items:[
+    {v:100, q:"Hvad er 10 % af 250?", a:"25"},
+    {v:200, q:"Løs ligningen: x + 7 = 12.", a:"x = 5"},
+    {v:300, q:"Hvad er arealet af et rektangel med siderne 6 cm og 4 cm?", a:"24 cm²", note:"længde × bredde"},
+    {v:400, q:"I en retvinklet trekant er de to kateter 3 og 4. Hvor lang er hypotenusen?", a:"5", note:"Pythagoras: 3² + 4² = 5²"},
+    {v:500, q:"En vare koster 400 kr. og sættes 25 % ned. Hvad er den nye pris?", a:"300 kr.", note:"400 − 100 kr."},
+  ]},
+  { name:"Historie", items:[
+    {v:100, q:"Hvad kaldes de nordboere, der sejlede på togter ca. 800-1050?", a:"Vikingerne"},
+    {v:200, q:"Hvilken mur delte byen Berlin og faldt i 1989?", a:"Berlinmuren"},
+    {v:300, q:"Hvem nåede Amerika i 1492?", a:"Christofer Columbus"},
+    {v:400, q:"Hvad kaldes perioden med fabrikker og maskiner, der startede i 1700-tallets England?", a:"Den industrielle revolution"},
+    {v:500, q:"Hvilken styreform betyder 'folkestyre' og opstod i antikkens Grækenland?", a:"Demokrati", note:"demos = folk, kratos = magt"},
+  ]},
+  { name:"Religion", items:[
+    {v:100, q:"Hvor mange gange om dagen beder mange muslimer?", a:"5 gange", note:"de fem daglige bønner"},
+    {v:200, q:"Hvad hedder jødernes ugentlige hviledag?", a:"Sabbat"},
+    {v:300, q:"Hvad kaldes en rejse til et helligt sted, fx muslimers rejse til Mekka?", a:"En pilgrimsrejse", note:"til Mekka kaldes den hajj"},
+    {v:400, q:"Hvad kaldes de første fem bøger i Bibelen, som også er jødernes Torah?", a:"Mosebøgerne", note:"de fem Mosebøger / Toraen"},
+    {v:500, q:"Hvilken verdensreligion er en af de ældste og har mange guder og tro på genfødsel?", a:"Hinduismen"},
+  ]},
+  { name:"Geografi", items:[
+    {v:100, q:"Hvad hedder Sveriges hovedstad?", a:"Stockholm"},
+    {v:200, q:"Hvad hedder verdens højeste bjerg?", a:"Mount Everest"},
+    {v:300, q:"Hvad hedder Danmarks længste å?", a:"Gudenåen"},
+    {v:400, q:"Hvilken verdensdel er størst (areal)?", a:"Asien"},
+    {v:500, q:"Hvad kaldes et meget tørt område med næsten ingen nedbør, fx Sahara?", a:"En ørken"},
+  ]},
+  { name:"Fysik/kemi", items:[
+    {v:100, q:"Hvilken kraft trækker alting ned mod Jorden?", a:"Tyngdekraften", note:"tyngde / gravitation"},
+    {v:200, q:"Hvad er det kemiske symbol for brint (hydrogen)?", a:"H"},
+    {v:300, q:"Hvilken planet ligger tættest på Solen?", a:"Merkur"},
+    {v:400, q:"Hvad kaldes det, når vand bliver til vanddamp?", a:"Fordampning"},
+    {v:500, q:"Hvad måler man i enheden volt (V)?", a:"(Elektrisk) spænding", note:"strøm måles i ampere"},
+  ]},
+  { name:"Blandet", items:[
+    {v:100, q:"Hvor mange ben har et insekt?", a:"6"},
+    {v:200, q:"Hvad er verdens største pattedyr?", a:"Blåhvalen"},
+    {v:300, q:"Hvilket dansk firma er verdenskendt for sine byggeklodser?", a:"LEGO"},
+    {v:400, q:"Hvor mange kontinenter er der på Jorden?", a:"7"},
+    {v:500, q:"Hvad hedder den galakse, vores solsystem ligger i?", a:"Mælkevejen"},
+  ]},
+];
+
+const ROUNDS = [ROUND1, ROUND2];
+
 const GOALS = [
   { fag:"Matematik", omr:"Fælles Mål · Geometri og måling", mal:[
     "Eleven kan beregne rumfang og overfladeareal af rumlige figurer (terning, kasse, cylinder m.fl.).",
@@ -268,7 +316,9 @@ const GOALS = [
 
 /* ---------- State + persistence ---------- */
 const KEY = "uge25_jeopardy_v1";
-let state = load() || { teams:[{name:"Hold 1",score:0},{name:"Hold 2",score:0}], used:[] };
+let state = load() || { teams:[{name:"Hold 1",score:0},{name:"Hold 2",score:0}], used:[], round:0 };
+if(typeof state.round !== "number") state.round = 0;
+let CATEGORIES = ROUNDS[state.round];
 function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
 function load(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
 const keyOf = (c,i)=> c+"-"+i;
@@ -379,8 +429,18 @@ document.getElementById("addTeam").addEventListener("click",()=>{
 });
 document.getElementById("reset").addEventListener("click",()=>{
   if(!confirm("Nyt spil? Alle felter åbnes igen og holdscoren nulstilles.")) return;
-  state={ teams: state.teams.map(t=>({name:t.name,score:0})), used:[] };
+  state={ teams: state.teams.map(t=>({name:t.name,score:0})), used:[], round: state.round };
   save(); renderTeams(); renderBoard();
+});
+
+/* ---------- Round switch ---------- */
+const roundBtn=document.getElementById("roundBtn");
+function setRoundLabel(){ roundBtn.textContent = "🔁 Runde " + (state.round+1) + (state.round===0 ? " ▸ 2" : " ▸ 1"); }
+roundBtn.addEventListener("click",()=>{
+  state.round = state.round===0 ? 1 : 0;
+  CATEGORIES = ROUNDS[state.round];
+  state.used = [];
+  save(); setRoundLabel(); renderBoard();
 });
 function closeOverlays(){ qOverlay.classList.remove("show"); gOverlay.classList.remove("show"); current=null; }
 document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",closeOverlays));
@@ -393,7 +453,7 @@ document.addEventListener("keydown",e=>{
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 
 /* ---------- Init ---------- */
-renderTeams(); renderBoard();
+renderTeams(); renderBoard(); setRoundLabel();
 </script>
 </body>
 </html>
