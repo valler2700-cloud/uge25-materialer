@@ -55,20 +55,91 @@
   .cat.H{background:rgba(122,168,255,.18);color:var(--his)}
   .cat.B{background:rgba(255,184,107,.2);color:var(--beg)}
   .empty{color:var(--muted);padding:40px 0;text-align:center}
+  .printhelp{color:var(--muted);font-size:13px;background:rgba(255,255,255,.05);border:1px solid var(--line);
+    border-radius:12px;padding:10px 14px;margin:0 0 18px;max-width:66ch;line-height:1.5}
+  .printhelp b{color:var(--gold-soft)}
+  #printArea{display:none}
+
+  .modenav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .mbtn{cursor:pointer;font-family:"Anton",sans-serif;letter-spacing:.03em;font-size:16px;
+    text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.06);
+    border:1px solid var(--line);border-radius:12px;padding:10px 18px;transition:.15s}
+  .mbtn:hover{border-color:var(--gold)}
+  .mbtn.on{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
+
+  .dyst{max-width:560px;margin:0 auto;text-align:center}
+  .dyst .turn{font-family:"Anton";font-size:22px;color:var(--gold);text-transform:uppercase;margin:0 0 4px}
+  .dyst .score{color:var(--muted);font-size:15px;margin:0 0 14px}
+  .dyst .score b{color:var(--gold-soft)}
+  .dyst .note{color:var(--muted);font-size:12.5px;margin:6px 0 16px;font-style:italic}
+  .dcard{background:linear-gradient(170deg,#172263,#0c1340);border:1px solid var(--line);
+    border-radius:18px;padding:18px;margin:0 auto}
+  .dcard .dnm{font-family:"Anton";font-size:22px;color:var(--gold);text-transform:uppercase;line-height:1.05}
+  .dcard .dera{color:var(--muted);font-size:13px;margin-bottom:10px}
+  .statline{display:flex;justify-content:space-between;align-items:center;gap:10px;
+    border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:7px 0;
+    font-size:16px;cursor:pointer;background:rgba(255,255,255,.04);transition:.13s}
+  .statline:hover{border-color:var(--gold);background:rgba(247,201,72,.10)}
+  .statline .sv{font-family:"Anton";font-size:20px;color:var(--gold-soft)}
+  .statline.win{background:rgba(123,211,137,.18);border-color:var(--rel)}
+  .statline.lose{opacity:.55}
+  .statline.pick{pointer-events:none}
+  .reveal{display:flex;gap:12px;justify-content:center;align-items:stretch;flex-wrap:wrap}
+  .reveal .dcard{flex:1 1 220px}
+  .dmsg{font-family:"Anton";font-size:20px;text-transform:uppercase;margin:12px 0;min-height:24px}
+  .dmsg.win1,.dmsg.win2{color:var(--rel)} .dmsg.tie{color:var(--beg)}
+  .dbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .dbtns button{cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;border-radius:10px;
+    padding:10px 16px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink)}
+  .dbtns button.primary{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
+  .facedown{display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--muted);
+    background:repeating-linear-gradient(45deg,#0c1340,#0c1340 8px,#101a52 8px,#101a52 16px);
+    border:1px solid var(--line);border-radius:18px;min-height:160px}
+
+.tid{max-width:720px;margin:0 auto;text-align:center}
+.tid .turn{font-family:"Anton";font-size:20px;color:var(--gold);text-transform:uppercase;margin:0 0 4px}
+.tid .score{color:var(--muted);font-size:14px;margin:0 0 12px}
+.tboard{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch;justify-content:center;margin:14px 0}
+.tslot{min-width:26px;border:1px dashed var(--line);border-radius:8px;cursor:pointer;
+  display:flex;align-items:center;color:var(--muted);font-size:18px;padding:0 8px;transition:.13s}
+.tslot:hover{border-color:var(--gold);color:var(--gold)}
+.tcard{background:linear-gradient(170deg,#172263,#0c1340);border:1px solid var(--line);
+  border-radius:10px;padding:8px 10px;min-width:120px;max-width:150px;font-size:12px}
+.tcard .tn{font-family:"Anton";font-size:13px;color:var(--gold);text-transform:uppercase;line-height:1.05}
+.tcard .ty{color:var(--gold-soft);font-weight:700;margin-top:3px}
+.tcur{background:linear-gradient(170deg,#22305f,#101a52);border:1px solid var(--gold);
+  border-radius:12px;padding:12px;max-width:260px;margin:0 auto 6px}
+.tcur .tn{font-family:"Anton";font-size:18px;color:var(--gold);text-transform:uppercase}
+.tfeed{font-family:"Anton";font-size:18px;text-transform:uppercase;min-height:22px;margin:10px 0}
+.tfeed.good{color:var(--rel)} .tfeed.bad{color:#ff8a8a}
 
   @media print{
-    body{background:#fff;color:#000;padding:0}
-    h1,.lead,.bar,.meta{display:none}
-    .grid{grid-template-columns:repeat(3,1fr);gap:6px}
-    .card{aspect-ratio:auto;height:auto;perspective:none;animation:none;page-break-inside:avoid;border:1px solid #999;border-radius:8px;padding:8px}
-    .inner{transform:none!important;transform-style:flat}
-    .face{position:static;border:none;padding:0;backface-visibility:visible}
-    .front{background:none;align-items:flex-start;text-align:left;padding-bottom:4px;border-bottom:1px solid #ccc;margin-bottom:4px}
-    .front .num,.front .cat,.front .hint{position:static}
-    .front .ico{display:none}.front .nm{color:#000;font-size:15px}.front .era{color:#333}
-    .front .cat{color:#000;background:none;border:1px solid #999}
-    .back{background:none;transform:none;display:block}.back .bnm{display:none}.back .k{color:#000}
-    .row{color:#000;font-size:11px}
+    .modenav,#mode-dyst,#mode-tid{display:none!important}
+    @page{size:A4 portrait;margin:10mm}
+    body{background:#fff;color:#000;padding:0;margin:0}
+    .wrap{display:none!important}
+    #printArea{display:block}
+    .sheet{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:0;
+      width:100%;height:277mm;page-break-after:always;box-sizing:border-box}
+    .sheet:last-child{page-break-after:auto}
+    .pc{position:relative;border:1px dashed #b9b9b9;padding:5mm 4mm;overflow:hidden;box-sizing:border-box;
+      display:flex;flex-direction:column;color:#000;font-family:"Bricolage Grotesque",system-ui,sans-serif}
+    .pc.empty{border-color:#ececec}
+    .pc .pnum{position:absolute;top:2.5mm;left:3mm;font-family:"Anton",sans-serif;font-size:10px;color:#666}
+    .pc .pcat{position:absolute;top:2.5mm;right:3mm;font-size:8px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.04em;border:1px solid #999;border-radius:999px;padding:1px 6px;color:#000}
+    .pf{align-items:center;justify-content:center;text-align:center;gap:2mm}
+    .pf .pico{font-size:34px}
+    .pf .pnm{font-family:"Anton",sans-serif;font-size:16px;line-height:1.05;text-transform:uppercase}
+    .pf .pera{font-size:11px;color:#333;font-weight:600}
+    .pf .pstats{margin-top:2mm;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:.5mm 3mm;
+  font-size:8.5px;text-align:left}
+    .pf .pstats .s{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:.3mm 0}
+    .pf .pstats .s b{font-weight:700}
+    .pb{justify-content:flex-start;gap:1.6mm;padding-top:9mm}
+    .pb .pbnm{font-family:"Anton",sans-serif;font-size:12px;line-height:1.05;text-transform:uppercase;margin-bottom:1mm}
+    .pb .prow{font-size:9.5px;line-height:1.25}
+    .pb .prow .k{font-weight:700}
   }
 </style>
 </head>
@@ -79,6 +150,12 @@
      vende det — bagsiden viser <b>hvornår · hvem · hvad · konsekvens</b>. Brug dem til quiz, tidslinje
      eller "gæt personen". <span style="color:var(--gold-soft)">Spil-idéer nederst.</span></p>
 
+  <div class="modenav" id="modenav">
+    <button class="mbtn on" data-m="kort">📇 Kort</button>
+    <button class="mbtn" data-m="dyst">⚔️ Trumf-dyst</button>
+    <button class="mbtn" data-m="tid">⏳ Tidslinje</button>
+  </div>
+  <div id="mode-kort">
   <div class="bar">
     <input class="search" id="q" placeholder="🔎 Søg efter navn …">
     <div class="filt" id="filt">
@@ -88,7 +165,14 @@
       <button class="fbtn" data-f="B">⭐ Begge</button>
     </div>
   </div>
-  <div class="meta"><span id="count"></span> · <span class="print" onclick="window.print()">🖨 Print kortene</span></div>
+  <div class="meta"><span id="count"></span> ·
+    <span class="print" id="printAll">🖨 Print alle 100</span> ·
+    <span class="print" id="printDeck">⚔️ Print spildækket (52)</span></div>
+  <p class="printhelp">🖨 <b>Sådan får du info bag på hvert kort:</b> Tryk <b>“Print kortene”</b>, vælg
+     <b>Print på begge sider</b> og <b>Vend på den lange kant</b> i printerdialogen. Så lander hvert korts
+     info præcis bagpå (vend kortet om → der står teksten). Klip langs de stiplede linjer.
+     <b>Alle 100 kort</b> printes – uanset hvad du har filtreret på skærmen. Tip: tjek at tallet (fx
+     <b>#1</b>) er det samme på for- og bagside efter print – ellers skift til “kort kant” i printeren.</p>
 
   <div class="grid" id="grid"></div>
   <p class="empty" id="empty" style="display:none">Ingen kort matcher søgningen.</p>
@@ -99,7 +183,15 @@
     3) <b>Religiøs eller historisk?</b> sortér i to bunker. ·
     4) <b>Memory/par:</b> match person med en begivenhed.
   </p>
+  </div>
+  <div id="mode-dyst" hidden></div>
+  <div id="mode-tid" hidden></div>
 </div>
+
+<!-- Print-ark til dobbeltsidet print: skjult på skærm, vises kun ved print.
+     Forside-ark og bagside-ark parres (For1, Bag1, For2, Bag2 …) og bagsiden
+     spejler kolonnerne, så info lander præcist bag det rigtige kort (vend på lang kant). -->
+<div id="printArea" aria-hidden="true"></div>
 
 <script>
 const ICON={R:"🕊️",H:"🏛️",B:"⭐"}, LABEL={R:"Religiøs",H:"Historisk",B:"Begge"};
@@ -207,6 +299,173 @@ const D=[
 ["Hammurabi","H","ca. 1810–1750 f.v.t.","Babylonisk konge","Nedskrev en af verdens ældste lovsamlinger","Tidligt forbillede for skrevne retssystemer"]
 ];
 
+/* ==PURE-LOGIC-START== */
+var STATS = [
+  {key:'alder', label:'Alder',       icon:'⏳'},
+  {key:'i',     label:'Indflydelse', icon:'🌍'},
+  {key:'u',     label:'Udbredelse',  icon:'👥'},
+  {key:'e',     label:'Eftermæle', icon:'⭐'}
+];
+
+function alderScore(y, oldest, now){
+  now = now || 2026;
+  var v = Math.round((now - y) / (now - oldest) * 99) + 1;
+  return Math.max(1, Math.min(100, v));
+}
+
+function statValue(card, key, oldest){
+  var g = card[6];
+  if(key === 'alder') return alderScore(g.y, oldest);
+  return g[key];
+}
+
+function shuffle(arr, rng){
+  rng = rng || Math.random;
+  var a = arr.slice();
+  for(var i = a.length - 1; i > 0; i--){
+    var j = Math.floor(rng() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+function splitDeck(deck){
+  var half = Math.floor(deck.length / 2);
+  return [deck.slice(0, half), deck.slice(half)];
+}
+
+function resolveRound(cardA, cardB, key, oldest){
+  var va = statValue(cardA, key, oldest);
+  var vb = statValue(cardB, key, oldest);
+  if(va > vb) return {winner:'A', va:va, vb:vb};
+  if(vb > va) return {winner:'B', va:va, vb:vb};
+  return {winner:'tie', va:va, vb:vb};
+}
+
+function createGame(gameCards, rng){
+  var deck = shuffle(gameCards, rng);
+  var parts = splitDeck(deck);
+  return {p1:parts[0], p2:parts[1], pot:[], turn:1, over:false, winner:null, last:null};
+}
+
+function applyRound(state, key, oldest){
+  if(state.over) return state;
+  var s = {p1:state.p1.slice(), p2:state.p2.slice(), pot:state.pot.slice(),
+           turn:state.turn, over:false, winner:null, last:null};
+  var ca = s.p1[0], cb = s.p2[0];
+  s.p1 = s.p1.slice(1); s.p2 = s.p2.slice(1);
+  var res = resolveRound(ca, cb, key, oldest);
+  if(res.winner === 'tie'){
+    s.pot.push(ca, cb);
+  } else {
+    var won = [ca, cb].concat(s.pot);
+    s.pot = [];
+    if(res.winner === 'A'){ s.p1 = s.p1.concat(won); s.turn = 1; }
+    else { s.p2 = s.p2.concat(won); s.turn = 2; }
+  }
+  if(s.pot.length === 0){
+    if(s.p1.length === 0 && s.p2.length === 0){ s.over = true; s.winner = 0; }
+    else if(s.p1.length === 0){ s.over = true; s.winner = 2; }
+    else if(s.p2.length === 0){ s.over = true; s.winner = 1; }
+  } else if(s.p1.length === 0 || s.p2.length === 0){
+    s.over = true;
+    s.winner = s.p1.length > s.p2.length ? 1 : (s.p2.length > s.p1.length ? 2 : 0);
+  }
+  s.last = {a:ca, b:cb, key:key, va:res.va, vb:res.vb, winner:res.winner};
+  return s;
+}
+
+function leader(state){
+  if(state.p1.length > state.p2.length) return 1;
+  if(state.p2.length > state.p1.length) return 2;
+  return 0;
+}
+
+function timelineCorrect(boardYears, insertIndex, year){
+  var left  = insertIndex > 0 ? boardYears[insertIndex - 1] : -Infinity;
+  var right = insertIndex < boardYears.length ? boardYears[insertIndex] : Infinity;
+  return year >= left && year <= right;
+}
+
+function validateGameData(D){
+  var errors = [];
+  var game = D.filter(function(c){ return c[6]; });
+  if(game.length !== 52) errors.push('forventede 52 spilkort, fik ' + game.length);
+  var names = {};
+  game.forEach(function(c){
+    var g = c[6];
+    if(typeof g.y !== 'number') errors.push(c[0] + ': mangler/ugyldigt år');
+    ['i','u','e'].forEach(function(k){
+      if(typeof g[k] !== 'number' || g[k] < 1 || g[k] > 100)
+        errors.push(c[0] + ': ' + k + ' uden for 1-100');
+    });
+    if(names[c[0]]) errors.push('dublet: ' + c[0]);
+    names[c[0]] = 1;
+  });
+  return {ok: errors.length === 0, errors: errors};
+}
+/* ==PURE-LOGIC-END== */
+
+/* ==DATA-START== */
+var GAMESTATS = {
+  "Jesus fra Nazaret":{y:5,i:99,u:98,e:97},
+  "Muhammad":{y:610,i:96,u:95,e:94},
+  "Buddha (Siddhartha Gautama)":{y:-500,i:90,u:82,e:88},
+  "Moses":{y:-1250,i:84,u:80,e:82},
+  "Abraham":{y:-1800,i:82,u:85,e:78},
+  "Martin Luther":{y:1483,i:88,u:70,e:80},
+  "Moder Teresa":{y:1910,i:62,u:55,e:85},
+  "Dalai Lama (den 14.)":{y:1935,i:58,u:50,e:80},
+  "Konfutse (Confucius)":{y:-551,i:85,u:78,e:82},
+  "Guru Nanak":{y:1469,i:66,u:58,e:64},
+  "Mahatma Gandhi":{y:1869,i:85,u:72,e:90},
+  "Martin Luther King Jr.":{y:1929,i:80,u:65,e:88},
+  "N.F.S. Grundtvig":{y:1783,i:60,u:45,e:70},
+  "Søren Kierkegaard":{y:1813,i:68,u:48,e:78},
+  "Jeanne d'Arc":{y:1412,i:58,u:50,e:80},
+  "Saladin":{y:1137,i:70,u:62,e:72},
+  "Mansa Musa":{y:1280,i:60,u:55,e:66},
+  "Adolf Hitler":{y:1889,i:95,u:90,e:90},
+  "Winston Churchill":{y:1874,i:84,u:78,e:86},
+  "Josef Stalin":{y:1878,i:90,u:85,e:84},
+  "Franklin D. Roosevelt":{y:1882,i:85,u:80,e:82},
+  "Anne Frank":{y:1929,i:55,u:60,e:88},
+  "Erik Scavenius":{y:1877,i:45,u:30,e:50},
+  "Harald Blåtand":{y:935,i:66,u:45,e:78},
+  "Gorm den Gamle":{y:900,i:50,u:30,e:58},
+  "Margrete 1.":{y:1353,i:64,u:48,e:70},
+  "Christian 4.":{y:1577,i:58,u:42,e:74},
+  "Tycho Brahe":{y:1546,i:70,u:55,e:72},
+  "H.C. Andersen":{y:1805,i:72,u:80,e:88},
+  "Niels Bohr":{y:1885,i:82,u:68,e:80},
+  "Dronning Margrethe 2.":{y:1940,i:50,u:40,e:72},
+  "Karen Blixen":{y:1885,i:58,u:55,e:70},
+  "Isaac Newton":{y:1643,i:94,u:80,e:90},
+  "Albert Einstein":{y:1879,i:95,u:85,e:95},
+  "Charles Darwin":{y:1809,i:92,u:78,e:88},
+  "Marie Curie":{y:1867,i:82,u:70,e:86},
+  "Galileo Galilei":{y:1564,i:86,u:72,e:84},
+  "Nicolaus Copernicus":{y:1473,i:84,u:68,e:78},
+  "Aristoteles":{y:-384,i:92,u:82,e:88},
+  "Sokrates":{y:-470,i:86,u:75,e:86},
+  "Pythagoras":{y:-570,i:80,u:72,e:84},
+  "Alan Turing":{y:1912,i:84,u:70,e:82},
+  "Leonardo da Vinci":{y:1452,i:88,u:78,e:92},
+  "Johannes Gutenberg":{y:1400,i:90,u:82,e:80},
+  "Napoleon Bonaparte":{y:1769,i:86,u:78,e:86},
+  "Julius Cæsar":{y:-100,i:88,u:80,e:88},
+  "Cleopatra":{y:-69,i:68,u:60,e:84},
+  "Alexander den Store":{y:-356,i:88,u:78,e:86},
+  "Christofer Columbus":{y:1451,i:82,u:75,e:80},
+  "Karl den Store":{y:742,i:80,u:68,e:74},
+  "Nelson Mandela":{y:1918,i:80,u:68,e:88},
+  "William Shakespeare":{y:1564,i:82,u:80,e:92}
+};
+D.forEach(function(c){ if(GAMESTATS[c[0]]) c[6] = GAMESTATS[c[0]]; });
+var GAME = D.filter(function(c){ return c[6]; });
+var OLDEST = Math.min.apply(null, GAME.map(function(c){ return c[6].y; }));
+/* ==DATA-END== */
+
 const grid=document.getElementById("grid"), countEl=document.getElementById("count"),
       emptyEl=document.getElementById("empty"), qEl=document.getElementById("q");
 let filter="A", search="";
@@ -225,7 +484,6 @@ function render(){
         <span class="num">#${i+1}</span><span class="cat ${c[1]}">${LABEL[c[1]]}</span>
         <span class="ico">${ICON[c[1]]}</span>
         <span class="nm">${esc(c[0])}</span>
-        <span class="era">${esc(c[2])}</span>
         <span class="hint">tryk for at vende →</span>
       </div>
       <div class="face back">
@@ -247,7 +505,214 @@ document.getElementById("filt").addEventListener("click",e=>{
   filter=b.dataset.f; render();
 });
 qEl.addEventListener("input",()=>{ search=qEl.value.toLowerCase().trim(); render(); });
+
+/* ---- Dobbeltsidet print: 9 kort (3×3) pr. A4-side ----
+   Hver "ark-par" = en forside og en bagside. Bagsiden spejler hver rækkes
+   kolonner (kol. 0↔2), så når papiret vendes på den LANGE kant, lander hvert
+   korts info præcist bag forsiden. Tallet (#N) står på begge sider til kontrol. */
+const COLS=3, ROWS=3, PER=COLS*ROWS;
+function pcCorner(c,i){return `<span class="pnum">#${i+1}</span><span class="pcat">${LABEL[c[1]]}</span>`;}
+function frontCell(it){
+  var d=document.createElement("div"); d.className="pc pf";
+  var html=pcCorner(it.c,it.i)+
+    `<span class="pico">${ICON[it.c[1]]}</span>`+
+    `<span class="pnm">${esc(it.c[0])}</span>`;
+  if(it.c[6]){
+    html += '<div class="pstats">' + STATS.map(function(s){
+      return '<div class="s"><span>'+s.icon+' '+s.label+'</span><b>'+statValue(it.c,s.key,OLDEST)+'</b></div>';
+    }).join('') + '</div>';
+  }
+  d.innerHTML=html; return d;
+}
+function backCell(it){
+  const d=document.createElement("div"); d.className="pc pb";
+  d.innerHTML=pcCorner(it.c,it.i)+
+    `<div class="pbnm">${esc(it.c[0])}</div>`+
+    `<div class="prow"><span class="k">Hvornår:</span> ${esc(it.c[2])}</div>`+
+    `<div class="prow"><span class="k">Hvem:</span> ${esc(it.c[3])}</div>`+
+    `<div class="prow"><span class="k">Hvad:</span> ${esc(it.c[4])}</div>`+
+    `<div class="prow"><span class="k">Konsekvens/omfang:</span> ${esc(it.c[5])}</div>`;
+  return d;
+}
+function emptyCell(){const d=document.createElement("div"); d.className="pc empty"; return d;}
+function buildPrint(deck){
+  var area=document.getElementById("printArea"); area.innerHTML="";
+  var src = deck || D;
+  var all=src.map(function(c){ return {c:c, i:D.indexOf(c)}; });
+  for(let p=0;p<all.length;p+=PER){
+    const page=all.slice(p,p+PER);
+    const fs=document.createElement("div"); fs.className="sheet front-sheet";
+    for(let k=0;k<PER;k++) fs.appendChild(page[k]?frontCell(page[k]):emptyCell());
+    area.appendChild(fs);
+    const bs=document.createElement("div"); bs.className="sheet back-sheet";
+    for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
+      const it=page[r*COLS+(COLS-1-c)];
+      bs.appendChild(it?backCell(it):emptyCell());
+    }
+    area.appendChild(bs);
+  }
+}
+
 render();
+buildPrint();
+document.getElementById('printAll').onclick = function(){ buildPrint(D); window.print(); };
+document.getElementById('printDeck').onclick = function(){ buildPrint(GAME); window.print(); };
+
+var MODES = ['kort','dyst','tid'];
+function showMode(m){
+  MODES.forEach(function(x){
+    document.getElementById('mode-' + x).hidden = (x !== m);
+  });
+  document.querySelectorAll('.mbtn').forEach(function(b){
+    b.classList.toggle('on', b.dataset.m === m);
+  });
+  if(m === 'dyst') initDyst();
+  if(m === 'tid')  initTid();
+}
+document.getElementById('modenav').addEventListener('click', function(e){
+  var b = e.target.closest('.mbtn'); if(!b) return;
+  showMode(b.dataset.m);
+});
+// stubs (replaced in later tasks)
+var DKEY = 'uge25_kortkamp_v1';
+var dgame = null, dphase = 'pick'; // 'pick' | 'reveal'
+
+function initDyst(){
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem(DKEY)); } catch(e){}
+  dgame = saved && saved.p1 ? saved : createGame(GAME);
+  dphase = 'pick';
+  renderDyst();
+}
+function saveDyst(){ try { localStorage.setItem(DKEY, JSON.stringify(dgame)); } catch(e){} }
+function newGame(){ dgame = createGame(GAME); dphase='pick'; saveDyst(); renderDyst(); }
+function scoreLine(){ return '<p class="score">🟦 <b>' + dgame.p1.length + '</b> — <b>' + dgame.p2.length +
+  '</b> 🟥' + (dgame.pot.length ? ' · pulje: ' + dgame.pot.length : '') + '</p>'; }
+
+function statRow(card, key, cls){
+  var s = STATS.filter(function(x){return x.key===key;})[0];
+  return '<div class="statline ' + (cls||'') + '" data-key="' + key + '">' +
+         '<span>' + s.icon + ' ' + s.label + '</span>' +
+         '<span class="sv">' + statValue(card, key, OLDEST) + '</span></div>';
+}
+function cardHTML(card, showStats){
+  var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div>';
+  if(showStats) STATS.forEach(function(s){ h += statRow(card, s.key, ''); });
+  return h + '</div>';
+}
+
+function renderDyst(){
+  var m = document.getElementById('mode-dyst');
+  if(dgame.over){
+    var w = dgame.winner;
+    m.innerHTML = '<div class="dyst"><p class="turn">' +
+      (w === 0 ? 'Uafgjort!' : 'Spiller ' + w + ' vandt! 🏆') + '</p>' +
+      '<p class="score">Slut: 🟦 ' + dgame.p1.length + ' — ' + dgame.p2.length + ' 🟥</p>' +
+      '<div class="dbtns"><button class="primary" id="dnew">Nyt spil</button></div></div>';
+    document.getElementById('dnew').onclick = newGame;
+    saveDyst();
+    return;
+  }
+  var active = dgame.turn;
+  var myTop = active === 1 ? dgame.p1[0] : dgame.p2[0];
+  if(dphase === 'pick'){
+    m.innerHTML = '<div class="dyst">' +
+      '<p class="turn">Din tur — Spiller ' + active + '</p>' +
+      scoreLine() +
+      '<p class="note">Høje tal = stor historisk betydning — ikke at personen var „god".</p>' +
+      cardHTML(myTop, true) +
+      '<div style="color:var(--muted);font-size:13px;margin-top:16px">Modstanderens kort (skjult):</div>' +
+      '<div class="facedown" style="max-width:150px;min-height:84px;margin:6px auto 0">?</div>' +
+      '<div class="dbtns"><button id="dstop">Stop &amp; tæl op</button>' +
+      '<button id="dnew2">Nyt spil</button></div></div>';
+    m.querySelectorAll('.statline').forEach(function(el){
+      el.onclick = function(){ pickStat(el.dataset.key); };
+    });
+  } else { // reveal
+    var a = dgame.last.a, b = dgame.last.b, key = dgame.last.key, res = dgame.last.winner;
+    var cls1 = res === 'A' ? 'win' : (res === 'B' ? 'lose' : '');
+    var cls2 = res === 'B' ? 'win' : (res === 'A' ? 'lose' : '');
+    function reveal(card, winCls){
+      var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div>';
+      STATS.forEach(function(s){
+        var extra = s.key === key ? (' ' + winCls) : ''; h += statRow(card, s.key, (s.key===key?'pick':'') + extra);
+      });
+      return h + '</div>';
+    }
+    var msg = res === 'tie' ? 'Uafgjort — til puljen!' : 'Spiller ' + (res==='A'?1:2) + ' vinder runden!';
+    m.innerHTML = '<div class="dyst">' +
+      scoreLine() +
+      '<div class="reveal">' + reveal(a, cls1) + reveal(b, cls2) + '</div>' +
+      '<p class="dmsg ' + (res==='tie'?'tie':(res==='A'?'win1':'win2')) + '">' + msg + '</p>' +
+      '<div class="dbtns"><button class="primary" id="dnext">Næste runde</button></div></div>';
+    document.getElementById('dnext').onclick = function(){ dphase = 'pick'; renderDyst(); };
+  }
+  var stop = document.getElementById('dstop'); if(stop) stop.onclick = stopCount;
+  var nw = document.getElementById('dnew2'); if(nw) nw.onclick = newGame;
+}
+
+function pickStat(key){
+  dgame = applyRound(dgame, key, OLDEST);
+  dphase = 'reveal';
+  saveDyst();
+  renderDyst();
+}
+function stopCount(){
+  var w = leader(dgame);
+  dgame.over = true; dgame.winner = w;
+  saveDyst(); renderDyst();
+}
+var tdeck = [], tboard = [], tcur = null, tscore = 0, tdrawn = 0, TROUNDS = 16;
+
+function fmtYear(y){ return y < 0 ? Math.abs(y) + ' f.v.t.' : '' + y; }
+
+function initTid(){
+  tdeck = shuffle(GAME).slice(0, TROUNDS);
+  tboard = [ tdeck.shift() ];      // first card placed free
+  tscore = 0; tdrawn = 1;
+  drawTid();
+}
+function drawTid(){
+  tcur = tdeck.shift() || null;
+  renderTid('');
+}
+function renderTid(feed){
+  var m = document.getElementById('mode-tid');
+  if(!tcur){
+    m.innerHTML = '<div class="tid"><p class="turn">Færdig! 🏆</p>' +
+      '<p class="score">Du placerede <b>' + tscore + '</b> af ' + (tdrawn-1) + ' rigtigt.</p>' +
+      '<div class="dbtns"><button class="primary" id="tnew">Spil igen</button></div></div>';
+    document.getElementById('tnew').onclick = initTid;
+    return;
+  }
+  var slots = '<span class="tslot" data-i="0">◀</span>';
+  tboard.forEach(function(c, i){
+    slots += '<div class="tcard"><div class="tn">' + esc(c[0]) + '</div><div class="ty">' + fmtYear(c[6].y) + '</div></div>';
+    slots += '<span class="tslot" data-i="' + (i+1) + '">▼</span>';
+  });
+  m.innerHTML = '<div class="tid">' +
+    '<p class="turn">Tidslinje</p>' +
+    '<p class="score">Point: <b>' + tscore + '</b> · kort ' + tdrawn + '/' + TROUNDS + '</p>' +
+    '<div class="tcur"><div class="tn">' + esc(tcur[0]) + '</div><div style="color:var(--muted);font-size:12px">Hvornår levede personen? Placér på tidslinjen.</div></div>' +
+    '<p class="score">Klik hvor kortet skal ind på tidslinjen (ældst til venstre):</p>' +
+    '<div class="tboard">' + slots + '</div>' +
+    '<p class="tfeed ' + (feed?(feed.ok?'good':'bad'):'') + '">' + (feed ? feed.msg : '') + '</p></div>';
+  m.querySelectorAll('.tslot').forEach(function(el){
+    el.onclick = function(){ placeTid(parseInt(el.dataset.i, 10)); };
+  });
+}
+function placeTid(idx){
+  var years = tboard.map(function(c){ return c[6].y; });
+  var correct = timelineCorrect(years, idx, tcur[6].y);
+  var msg;
+  var truePos = years.filter(function(y){ return y <= tcur[6].y; }).length;
+  tboard.splice(truePos, 0, tcur);
+  if(correct){ tscore++; msg = {ok:true, msg:'Rigtigt! (' + fmtYear(tcur[6].y) + ')'}; }
+  else { msg = {ok:false, msg:'Forbi — kortet hører til ' + fmtYear(tcur[6].y)}; }
+  tdrawn++;
+  tcur = tdeck.shift() || null;
+  renderTid(msg);
+}
 </script>
 </body>
 </html>
