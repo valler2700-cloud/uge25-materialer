@@ -79,7 +79,7 @@
   .team .kill:hover{color:var(--bad);opacity:1}
 
   /* board */
-  .board{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(7px,1vw,12px)}
+  .board{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(6px,.8vw,11px)}
   .cat{
     grid-row:1; text-align:center; padding:14px 8px;border-radius:14px;
     background:linear-gradient(180deg,#0b1452,#0a0f3a);border:1px solid var(--line);
@@ -146,7 +146,7 @@
   .goal ul{margin:0;padding-left:20px} .goal li{margin:4px 0;line-height:1.4}
   .close-x{position:absolute;top:14px;right:16px;border:none;background:transparent;color:var(--muted);
     font-size:26px;cursor:pointer;line-height:1} .close-x:hover{color:var(--gold)}
-  @media(max-width:560px){.board{grid-template-columns:repeat(4,1fr);gap:6px}.cat{font-size:11px;padding:8px 4px;min-height:auto}}
+  @media(max-width:560px){.board{grid-template-columns:repeat(6,1fr);gap:4px}.cat{font-size:9px;padding:6px 2px;min-height:auto}.tile{font-size:clamp(15px,4vw,28px);border-radius:9px}}
 </style>
 </head>
 <body>
@@ -154,8 +154,8 @@
   <header>
     <div class="brand">
       <h1>Jeopardy · Uge 25</h1>
-      <p>Repetition i eksamensugen for <b>8B &amp; 8D</b> — matematik, historie og religion.
-         Klik et felt → læs spørgsmålet → <b>Vis svar</b> → giv holdet point.</p>
+      <p>Repetition i eksamensugen for <b>8B &amp; 8D</b> — matematik, historie, religion,
+         geografi og fysik/kemi. Klik et felt → læs spørgsmålet → <b>Vis svar</b> → giv holdet point.</p>
     </div>
     <div class="tools">
       <button class="btn ghost" id="goalsBtn">🎯 Læringsmål</button>
@@ -220,6 +220,20 @@ const CATEGORIES = [
     {v:400, q:"Et 'livsspørgsmål' har ikke ét endeligt svar. Giv et eksempel.", a:"Fx 'Hvad er meningen med livet?' eller 'Hvad sker der, når vi dør?'", note:"alle gode bud tæller"},
     {v:500, q:"Hvad kaldes et livssyn uden tro på en gud, hvor mennesket selv skaber meningen?", a:"Sekulær humanisme", note:"(ateistisk livssyn)"},
   ]},
+  { name:"Geografi", items:[
+    {v:100, q:"Hvilken verdensdel ligger Danmark i?", a:"Europa"},
+    {v:200, q:"Hvad er Jordens største hav (ocean)?", a:"Stillehavet"},
+    {v:300, q:"Hvad hedder den tænkte linje midt om Jorden, der deler den i en nordlig og en sydlig halvkugle?", a:"Ækvator"},
+    {v:400, q:"Hvilket land har flest indbyggere i verden?", a:"Indien", note:"overhalede Kina i 2023"},
+    {v:500, q:"Hvad kaldes linjerne, man bruger til at angive et steds præcise position på Jorden?", a:"Bredde- og længdegrader"},
+  ]},
+  { name:"Fysik/kemi", items:[
+    {v:100, q:"Hvad hedder de tre tilstandsformer, et stof som vand kan have?", a:"Fast, flydende og gas (luftform)"},
+    {v:200, q:"Hvad er det kemiske symbol for ilt (oxygen)?", a:"O"},
+    {v:300, q:"Hvad kaldes den mindste byggesten, som et grundstof består af?", a:"Et atom"},
+    {v:400, q:"Hvad er den kemiske formel for vand?", a:"H₂O", note:"to brint (H) + én ilt (O)"},
+    {v:500, q:"Hvad kaldes det, når et fast stof går direkte over i gasform uden at blive flydende?", a:"Sublimering", note:"fx tøris → CO₂-gas"},
+  ]},
   { name:"Blandet", items:[
     {v:100, q:"Hvilken farve får man ved at blande blå og gul?", a:"Grøn"},
     {v:200, q:"Hvem er Danmarks regent (konge) i 2026?", a:"Kong Frederik 10."},
@@ -242,6 +256,14 @@ const GOALS = [
     "Eleven kan forklare, hvad et livsspørgsmål er, og give egne eksempler.",
     "Eleven kan sammenligne, hvordan forskellige livssyn svarer på spørgsmål om mening og død.",
     "Eleven kan formulere og begrunde egne tanker om livets store spørgsmål." ]},
+  { fag:"Geografi", omr:"Fælles Mål · Geografi", mal:[
+    "Eleven kan placere verdensdele, store have og lande på et kort.",
+    "Eleven kan bruge kortets gradnet (bredde- og længdegrader) til at angive position.",
+    "Eleven kan sammenligne befolkningstal og levevilkår mellem lande." ]},
+  { fag:"Fysik/kemi", omr:"Fælles Mål · Stof og partikler", mal:[
+    "Eleven kan beskrive stoffers tilstandsformer og overgangene mellem dem.",
+    "Eleven kan forklare, at grundstoffer består af atomer, og bruge det periodiske system.",
+    "Eleven kan bruge simple kemiske symboler og formler (fx O og H₂O)." ]},
 ];
 
 /* ---------- State + persistence ---------- */

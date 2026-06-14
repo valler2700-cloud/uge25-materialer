@@ -7,9 +7,9 @@ religion (8. klasse). Forankret i Fælles Mål.
 
 ## Indhold
 - **index.html** — forside med spil + download.
-- **Jeopardy_uge25.html** — interaktivt quiz-spil til smartboard (matematik, historie, religion, blandet) med læringsmål.
-- **Ugeplan_uge25** (.docx/.md) — ugeplan dag for dag + eksamensnerver-modul + idébank.
-- **Religionsforloeb_Livets-store-spoergsmaal** (.docx/.md) — 4-lektioners forløb til 8D.
+- **Jeopardy_uge25.html** — interaktivt quiz-spil til smartboard (matematik, historie, religion, geografi, fysik/kemi, blandet) med læringsmål.
+- **Religionsforloeb_Ondskab** (.docx/.md) — kort religionsforløb om ondskab (naturlig/moralsk/banal ondskab + etik).
+- **Etiske-dilemmaer_gruppeopgave** (.docx/.md) — gruppeopgave: klassiske dilemmaer drøftet ud fra pligt-, konsekvens-, dyds- og nærhedsetik.
 - **Kortspil_religion-historie.html** — 100 karakter-kort + spil: Trumf-dyst (Top Trumps) og Tidslinje med et 52-korts spildæk (point pr. person).
 - **Laerervejledning_Karakter-kamp** (.docx/.md) — lærervejledning til kortspillet: regler, differentiering, Fælles Mål, ugeforløb, diskussionsspørgsmål.
 - **Elevark_Karakter-kamp** (.docx/.md) — elevark: spilleregler + arbejdsark (tidslinje-log, gæt personen, design dit eget kort).
