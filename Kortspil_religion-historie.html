@@ -484,7 +484,6 @@ function render(){
         <span class="num">#${i+1}</span><span class="cat ${c[1]}">${LABEL[c[1]]}</span>
         <span class="ico">${ICON[c[1]]}</span>
         <span class="nm">${esc(c[0])}</span>
-        <span class="era">${esc(c[2])}</span>
         <span class="hint">tryk for at vende →</span>
       </div>
       <div class="face back">
@@ -517,8 +516,7 @@ function frontCell(it){
   var d=document.createElement("div"); d.className="pc pf";
   var html=pcCorner(it.c,it.i)+
     `<span class="pico">${ICON[it.c[1]]}</span>`+
-    `<span class="pnm">${esc(it.c[0])}</span>`+
-    `<span class="pera">${esc(it.c[2])}</span>`;
+    `<span class="pnm">${esc(it.c[0])}</span>`;
   if(it.c[6]){
     html += '<div class="pstats">' + STATS.map(function(s){
       return '<div class="s"><span>'+s.icon+' '+s.label+'</span><b>'+statValue(it.c,s.key,OLDEST)+'</b></div>';
@@ -598,8 +596,7 @@ function statRow(card, key, cls){
          '<span class="sv">' + statValue(card, key, OLDEST) + '</span></div>';
 }
 function cardHTML(card, showStats){
-  var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div>' +
-          '<div class="dera">' + esc(card[2]) + '</div>';
+  var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div>';
   if(showStats) STATS.forEach(function(s){ h += statRow(card, s.key, ''); });
   return h + '</div>';
 }
@@ -636,7 +633,7 @@ function renderDyst(){
     var cls1 = res === 'A' ? 'win' : (res === 'B' ? 'lose' : '');
     var cls2 = res === 'B' ? 'win' : (res === 'A' ? 'lose' : '');
     function reveal(card, winCls){
-      var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div><div class="dera">' + esc(card[2]) + '</div>';
+      var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div>';
       STATS.forEach(function(s){
         var extra = s.key === key ? (' ' + winCls) : ''; h += statRow(card, s.key, (s.key===key?'pick':'') + extra);
       });
@@ -696,7 +693,7 @@ function renderTid(feed){
   m.innerHTML = '<div class="tid">' +
     '<p class="turn">Tidslinje</p>' +
     '<p class="score">Point: <b>' + tscore + '</b> · kort ' + tdrawn + '/' + TROUNDS + '</p>' +
-    '<div class="tcur"><div class="tn">' + esc(tcur[0]) + '</div><div style="color:var(--muted);font-size:12px">' + esc(tcur[2]) + '</div></div>' +
+    '<div class="tcur"><div class="tn">' + esc(tcur[0]) + '</div><div style="color:var(--muted);font-size:12px">Hvornår levede personen? Placér på tidslinjen.</div></div>' +
     '<p class="score">Klik hvor kortet skal ind på tidslinjen (ældst til venstre):</p>' +
     '<div class="tboard">' + slots + '</div>' +
     '<p class="tfeed ' + (feed?(feed.ok?'good':'bad'):'') + '">' + (feed ? feed.msg : '') + '</p></div>';
