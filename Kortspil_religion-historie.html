@@ -132,6 +132,10 @@
     .pf .pico{font-size:34px}
     .pf .pnm{font-family:"Anton",sans-serif;font-size:16px;line-height:1.05;text-transform:uppercase}
     .pf .pera{font-size:11px;color:#333;font-weight:600}
+    .pf .pstats{margin-top:2mm;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:.5mm 3mm;
+  font-size:8.5px;text-align:left}
+    .pf .pstats .s{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:.3mm 0}
+    .pf .pstats .s b{font-weight:700}
     .pb{justify-content:flex-start;gap:1.6mm;padding-top:9mm}
     .pb .pbnm{font-family:"Anton",sans-serif;font-size:12px;line-height:1.05;text-transform:uppercase;margin-bottom:1mm}
     .pb .prow{font-size:9.5px;line-height:1.25}
@@ -161,7 +165,9 @@
       <button class="fbtn" data-f="B">⭐ Begge</button>
     </div>
   </div>
-  <div class="meta"><span id="count"></span> · <span class="print" onclick="window.print()">🖨 Print kortene (dobbeltsidet)</span></div>
+  <div class="meta"><span id="count"></span> ·
+    <span class="print" id="printAll">🖨 Print alle 100</span> ·
+    <span class="print" id="printDeck">⚔️ Print spildækket (52)</span></div>
   <p class="printhelp">🖨 <b>Sådan får du info bag på hvert kort:</b> Tryk <b>“Print kortene”</b>, vælg
      <b>Print på begge sider</b> og <b>Vend på den lange kant</b> i printerdialogen. Så lander hvert korts
      info præcis bagpå (vend kortet om → der står teksten). Klip langs de stiplede linjer.
@@ -508,12 +514,17 @@ qEl.addEventListener("input",()=>{ search=qEl.value.toLowerCase().trim(); render
 const COLS=3, ROWS=3, PER=COLS*ROWS;
 function pcCorner(c,i){return `<span class="pnum">#${i+1}</span><span class="pcat">${LABEL[c[1]]}</span>`;}
 function frontCell(it){
-  const d=document.createElement("div"); d.className="pc pf";
-  d.innerHTML=pcCorner(it.c,it.i)+
+  var d=document.createElement("div"); d.className="pc pf";
+  var html=pcCorner(it.c,it.i)+
     `<span class="pico">${ICON[it.c[1]]}</span>`+
     `<span class="pnm">${esc(it.c[0])}</span>`+
     `<span class="pera">${esc(it.c[2])}</span>`;
-  return d;
+  if(it.c[6]){
+    html += '<div class="pstats">' + STATS.map(function(s){
+      return '<div class="s"><span>'+s.icon+' '+s.label+'</span><b>'+statValue(it.c,s.key,OLDEST)+'</b></div>';
+    }).join('') + '</div>';
+  }
+  d.innerHTML=html; return d;
 }
 function backCell(it){
   const d=document.createElement("div"); d.className="pc pb";
@@ -526,9 +537,10 @@ function backCell(it){
   return d;
 }
 function emptyCell(){const d=document.createElement("div"); d.className="pc empty"; return d;}
-function buildPrint(){
-  const area=document.getElementById("printArea"); area.innerHTML="";
-  const all=D.map((c,i)=>({c,i})); // ALTID alle 100 kort, i rækkefølge
+function buildPrint(deck){
+  var area=document.getElementById("printArea"); area.innerHTML="";
+  var src = deck || D;
+  var all=src.map(function(c){ return {c:c, i:D.indexOf(c)}; });
   for(let p=0;p<all.length;p+=PER){
     const page=all.slice(p,p+PER);
     const fs=document.createElement("div"); fs.className="sheet front-sheet";
@@ -536,7 +548,7 @@ function buildPrint(){
     area.appendChild(fs);
     const bs=document.createElement("div"); bs.className="sheet back-sheet";
     for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
-      const it=page[r*COLS+(COLS-1-c)];   // spejl kolonner pr. række (lang kant)
+      const it=page[r*COLS+(COLS-1-c)];
       bs.appendChild(it?backCell(it):emptyCell());
     }
     area.appendChild(bs);
@@ -545,6 +557,8 @@ function buildPrint(){
 
 render();
 buildPrint();
+document.getElementById('printAll').onclick = function(){ buildPrint(D); window.print(); };
+document.getElementById('printDeck').onclick = function(){ buildPrint(GAME); window.print(); };
 
 var MODES = ['kort','dyst','tid'];
 function showMode(m){

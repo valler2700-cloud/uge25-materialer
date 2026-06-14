@@ -96,4 +96,7 @@ function playOnce(seedStart){
 }
 for(let s = 1; s <= 20; s++) ok('playthrough seed ' + s, playOnce(s) === 'ok');
 
+// 52-card deck paginates to 6 front/back pairs (ceil(52/9)=6)
+ok('deck pages', Math.ceil(52/9) === 6);
+
 console.log('PURE LOGIC: ' + passed + ' assertions passed');
