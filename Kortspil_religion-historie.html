@@ -587,6 +587,9 @@ function initDyst(){
   renderDyst();
 }
 function saveDyst(){ try { localStorage.setItem(DKEY, JSON.stringify(dgame)); } catch(e){} }
+function newGame(){ dgame = createGame(GAME); dphase='pick'; saveDyst(); renderDyst(); }
+function scoreLine(){ return '<p class="score">🟦 <b>' + dgame.p1.length + '</b> — <b>' + dgame.p2.length +
+  '</b> 🟥' + (dgame.pot.length ? ' · pulje: ' + dgame.pot.length : '') + '</p>'; }
 
 function statRow(card, key, cls){
   var s = STATS.filter(function(x){return x.key===key;})[0];
@@ -609,7 +612,7 @@ function renderDyst(){
       (w === 0 ? 'Uafgjort!' : 'Spiller ' + w + ' vandt! 🏆') + '</p>' +
       '<p class="score">Slut: 🟦 ' + dgame.p1.length + ' — ' + dgame.p2.length + ' 🟥</p>' +
       '<div class="dbtns"><button class="primary" id="dnew">Nyt spil</button></div></div>';
-    document.getElementById('dnew').onclick = function(){ dgame = createGame(GAME); dphase='pick'; saveDyst(); renderDyst(); };
+    document.getElementById('dnew').onclick = newGame;
     saveDyst();
     return;
   }
@@ -618,10 +621,11 @@ function renderDyst(){
   if(dphase === 'pick'){
     m.innerHTML = '<div class="dyst">' +
       '<p class="turn">Din tur — Spiller ' + active + '</p>' +
-      '<p class="score">🟦 <b>' + dgame.p1.length + '</b> — <b>' + dgame.p2.length + '</b> 🟥' +
-        (dgame.pot.length ? ' · pulje: ' + dgame.pot.length : '') + '</p>' +
+      scoreLine() +
       '<p class="note">Høje tal = stor historisk betydning — ikke at personen var „god".</p>' +
       cardHTML(myTop, true) +
+      '<div style="color:var(--muted);font-size:13px;margin-top:16px">Modstanderens kort (skjult):</div>' +
+      '<div class="facedown" style="max-width:150px;min-height:84px;margin:6px auto 0">?</div>' +
       '<div class="dbtns"><button id="dstop">Stop &amp; tæl op</button>' +
       '<button id="dnew2">Nyt spil</button></div></div>';
     m.querySelectorAll('.statline').forEach(function(el){
@@ -640,15 +644,14 @@ function renderDyst(){
     }
     var msg = res === 'tie' ? 'Uafgjort — til puljen!' : 'Spiller ' + (res==='A'?1:2) + ' vinder runden!';
     m.innerHTML = '<div class="dyst">' +
-      '<p class="score">🟦 <b>' + dgame.p1.length + '</b> — <b>' + dgame.p2.length + '</b> 🟥' +
-        (dgame.pot.length ? ' · pulje: ' + dgame.pot.length : '') + '</p>' +
+      scoreLine() +
       '<div class="reveal">' + reveal(a, cls1) + reveal(b, cls2) + '</div>' +
       '<p class="dmsg ' + (res==='tie'?'tie':(res==='A'?'win1':'win2')) + '">' + msg + '</p>' +
       '<div class="dbtns"><button class="primary" id="dnext">Næste runde</button></div></div>';
     document.getElementById('dnext').onclick = function(){ dphase = 'pick'; renderDyst(); };
   }
   var stop = document.getElementById('dstop'); if(stop) stop.onclick = stopCount;
-  var nw = document.getElementById('dnew2'); if(nw) nw.onclick = function(){ dgame = createGame(GAME); dphase='pick'; saveDyst(); renderDyst(); };
+  var nw = document.getElementById('dnew2'); if(nw) nw.onclick = newGame;
 }
 
 function pickStat(key){
