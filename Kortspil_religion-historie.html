@@ -60,7 +60,15 @@
   .printhelp b{color:var(--gold-soft)}
   #printArea{display:none}
 
+  .modenav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .mbtn{cursor:pointer;font-family:"Anton",sans-serif;letter-spacing:.03em;font-size:16px;
+    text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.06);
+    border:1px solid var(--line);border-radius:12px;padding:10px 18px;transition:.15s}
+  .mbtn:hover{border-color:var(--gold)}
+  .mbtn.on{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
+
   @media print{
+    .modenav,#mode-dyst,#mode-tid{display:none!important}
     @page{size:A4 portrait;margin:10mm}
     body{background:#fff;color:#000;padding:0;margin:0}
     .wrap{display:none!important}
@@ -92,6 +100,12 @@
      vende det — bagsiden viser <b>hvornår · hvem · hvad · konsekvens</b>. Brug dem til quiz, tidslinje
      eller "gæt personen". <span style="color:var(--gold-soft)">Spil-idéer nederst.</span></p>
 
+  <div class="modenav" id="modenav">
+    <button class="mbtn on" data-m="kort">📇 Kort</button>
+    <button class="mbtn" data-m="dyst">⚔️ Trumf-dyst</button>
+    <button class="mbtn" data-m="tid">⏳ Tidslinje</button>
+  </div>
+  <div id="mode-kort">
   <div class="bar">
     <input class="search" id="q" placeholder="🔎 Søg efter navn …">
     <div class="filt" id="filt">
@@ -117,6 +131,9 @@
     3) <b>Religiøs eller historisk?</b> sortér i to bunker. ·
     4) <b>Memory/par:</b> match person med en begivenhed.
   </p>
+  </div>
+  <div id="mode-dyst" hidden></div>
+  <div id="mode-tid" hidden></div>
 </div>
 
 <!-- Print-ark til dobbeltsidet print: skjult på skærm, vises kun ved print.
@@ -482,6 +499,25 @@ function buildPrint(){
 
 render();
 buildPrint();
+
+var MODES = ['kort','dyst','tid'];
+function showMode(m){
+  MODES.forEach(function(x){
+    document.getElementById('mode-' + x).hidden = (x !== m);
+  });
+  document.querySelectorAll('.mbtn').forEach(function(b){
+    b.classList.toggle('on', b.dataset.m === m);
+  });
+  if(m === 'dyst') initDyst();
+  if(m === 'tid')  initTid();
+}
+document.getElementById('modenav').addEventListener('click', function(e){
+  var b = e.target.closest('.mbtn'); if(!b) return;
+  showMode(b.dataset.m);
+});
+// stubs (replaced in later tasks)
+function initDyst(){}
+function initTid(){}
 </script>
 </body>
 </html>
