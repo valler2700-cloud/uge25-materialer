@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uge 25 – Materialer (8B & 8D)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070b24;--bg2:#10184a;--gold:#f7c948;--gold-soft:#ffe08a;--ink:#eef2ff;--muted:#97a3d6;--line:rgba(247,201,72,.16)}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--ink);
+    background:var(--bg);
+    background-image:radial-gradient(1100px 560px at 50% -10%,rgba(247,201,72,.18),transparent 60%),
+      radial-gradient(900px 700px at 110% 10%,rgba(80,120,255,.22),transparent 55%),
+      linear-gradient(160deg,var(--bg),var(--bg2));
+    padding:clamp(20px,4vw,56px)}
+  .wrap{max-width:960px;margin:0 auto}
+  h1{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.03em;text-transform:uppercase;
+    font-size:clamp(34px,7vw,72px);margin:0;color:var(--gold);
+    text-shadow:0 2px 0 #b8860b,0 0 28px rgba(247,201,72,.4)}
+  .lead{color:var(--muted);font-size:clamp(15px,2vw,19px);margin:10px 0 34px;max-width:60ch}
+  .lead b{color:var(--gold-soft)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:rgba(10,16,52,.55);border:1px solid var(--line);border-radius:18px;padding:22px;
+    display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden;
+    transition:.18s transform,.18s border-color}
+  .card:hover{transform:translateY(-4px);border-color:var(--gold)}
+  .card::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+  .ico{font-size:30px}
+  .card h2{margin:0;font-size:20px;color:var(--gold-soft)}
+  .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45;flex:1}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .lnk{font-weight:700;font-size:14px;text-decoration:none;border-radius:10px;padding:9px 14px;
+    border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.05);transition:.15s}
+  .lnk:hover{border-color:var(--gold);background:rgba(255,255,255,.12)}
+  .lnk.play{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
+  .note{margin-top:30px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+  .note b{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Uge 25 · Materialer</h1>
+  <p class="lead">Lette materialer til en eksamensuge for <b>8B &amp; 8D</b> i matematik, historie og religion.
+     Spil Jeopardy direkte, eller hent arkene som Word.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="ico">🎮</div>
+      <h2>Jeopardy</h2>
+      <p>Interaktivt quiz-spil til smartboard. 4 kategorier × 5 felter, holdscore og læringsmål-knap.</p>
+      <div class="links"><a class="lnk play" href="Jeopardy_uge25.html">▶ Spil nu</a></div>
+    </div>
+
+    <div class="card">
+      <div class="ico">📅</div>
+      <h2>Ugeplan</h2>
+      <p>Hele ugen dag for dag, eksamensnerver-modul og idébank.</p>
+      <div class="links"><a class="lnk" href="Ugeplan_uge25.docx">⬇ Word</a><a class="lnk" href="Ugeplan_uge25.md">Markdown</a></div>
+    </div>
+
+    <div class="card">
+      <div class="ico">✝️</div>
+      <h2>Religionsforløb</h2>
+      <p>"Livets store spørgsmål" — 4 lektioner til 8D tirsdag, med samtalekort.</p>
+      <div class="links"><a class="lnk" href="Religionsforloeb_Livets-store-spoergsmaal.docx">⬇ Word</a><a class="lnk" href="Religionsforloeb_Livets-store-spoergsmaal.md">Markdown</a></div>
+    </div>
+
+    <div class="card">
+      <div class="ico">🃏</div>
+      <h2>Karakter-kortspil</h2>
+      <p>100 kort med religiøse og historiske personer (hvornår · hvem · hvad · konsekvens). Til quiz, tidslinje og "gæt personen".</p>
+      <div class="links"><a class="lnk play" href="Kortspil_religion-historie.html">▶ Åbn</a></div>
+    </div>
+
+    <div class="card">
+      <div class="ico">🎭</div>
+      <h2>Rollespil (historie)</h2>
+      <p>Scenariebaseret støttedokument: eleverne sætter selv et rollespil op om 2. verdenskrig.</p>
+      <div class="links"><a class="lnk" href="Rollespil_historie_stoettedokument.docx">⬇ Word</a><a class="lnk" href="Rollespil_historie_stoettedokument.md">Markdown</a></div>
+    </div>
+
+    <div class="card">
+      <div class="ico">🚀</div>
+      <h2>Escape room (matematik)</h2>
+      <p>Elev-ark til print: 5 stationer giver en nødkode. Rumgeometri-tema.</p>
+      <div class="links"><a class="lnk" href="Escape-room_matematik_ELEV.docx">⬇ Word</a><a class="lnk" href="Escape-room_matematik_ELEV.md">Markdown</a></div>
+    </div>
+  </div>
+
+  <p class="note">🔒 <b>Facit</b> til escape room ligger ikke offentligt — kun lærerens lokale kopi.
+     Materialerne er forankret i <b>Fælles Mål</b> for 8. klasse (se læringsmål-knappen i Jeopardy).</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jeopardy – Uge 25 (8B & 8D)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070b24; --bg2:#10184a; --tile:#172263; --tile2:#1f2f86;
+    --gold:#f7c948; --gold-soft:#ffe08a; --ink:#eef2ff; --muted:#97a3d6;
+    --good:#37d39b; --bad:#fb7185; --line:rgba(247,201,72,.16);
+    --shadow:0 18px 40px -18px rgba(0,0,0,.8);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;
+    color:var(--ink); background:var(--bg);
+    background-image:
+      radial-gradient(1200px 600px at 50% -10%, rgba(247,201,72,.18), transparent 60%),
+      radial-gradient(900px 700px at 110% 10%, rgba(80,120,255,.22), transparent 55%),
+      radial-gradient(900px 700px at -10% 90%, rgba(120,60,200,.18), transparent 55%),
+      linear-gradient(160deg,var(--bg),var(--bg2));
+    background-attachment:fixed;
+    min-height:100%;
+    padding:clamp(14px,2.5vw,34px);
+  }
+  /* subtle dot texture */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; opacity:.05;
+    background-image:radial-gradient(rgba(255,255,255,.9) 1px, transparent 1.4px);
+    background-size:22px 22px;
+  }
+  .wrap{max-width:1400px;margin:0 auto;position:relative}
+
+  header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 24px;justify-content:space-between;margin-bottom:18px}
+  .brand h1{
+    font-family:"Anton",sans-serif; font-weight:400; letter-spacing:.04em;
+    font-size:clamp(34px,6vw,72px); line-height:.92; margin:0;
+    color:var(--gold); text-transform:uppercase;
+    text-shadow:0 2px 0 #b8860b, 0 0 28px rgba(247,201,72,.45);
+  }
+  .brand p{margin:6px 0 0;color:var(--muted);font-size:clamp(13px,1.5vw,17px);max-width:46ch}
+  .brand b{color:var(--gold-soft)}
+  .tools{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    font-family:inherit;font-weight:600;font-size:15px;cursor:pointer;
+    color:var(--ink);background:rgba(255,255,255,.06);
+    border:1px solid var(--line);border-radius:12px;padding:11px 16px;
+    transition:.18s transform,.18s background,.18s border-color;
+  }
+  .btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);border-color:var(--gold)}
+  .btn.gold{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent;font-weight:700}
+  .btn.ghost{background:transparent}
+  .btn:active{transform:translateY(0)}
+
+  /* scoreboard */
+  .teams{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+  .team{
+    flex:1 1 150px;min-width:140px;background:rgba(10,16,52,.6);
+    border:1px solid var(--line);border-radius:16px;padding:12px 14px;backdrop-filter:blur(6px);
+    box-shadow:var(--shadow);position:relative;overflow:hidden
+  }
+  .team::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+  .team input.name{
+    width:100%;background:transparent;border:none;color:var(--gold-soft);
+    font-family:inherit;font-weight:700;font-size:16px;padding:0;outline:none
+  }
+  .team .score{font-family:"Anton",sans-serif;font-size:clamp(30px,4vw,44px);line-height:1;margin:6px 0 8px}
+  .team .row{display:flex;gap:6px}
+  .chip{flex:1;cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.05);
+    color:var(--ink);border-radius:9px;padding:6px;font-family:"Anton",sans-serif;font-size:16px;transition:.15s}
+  .chip:hover{background:rgba(255,255,255,.14)}
+  .team .kill{position:absolute;top:8px;right:8px;border:none;background:transparent;color:var(--muted);
+    cursor:pointer;font-size:15px;line-height:1;opacity:.6}
+  .team .kill:hover{color:var(--bad);opacity:1}
+
+  /* board */
+  .board{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(7px,1vw,12px)}
+  .cat{
+    grid-row:1; text-align:center; padding:14px 8px;border-radius:14px;
+    background:linear-gradient(180deg,#0b1452,#0a0f3a);border:1px solid var(--line);
+    font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(13px,1.5vw,20px);
+    color:var(--gold-soft);display:flex;align-items:center;justify-content:center;min-height:64px
+  }
+  .tile{
+    aspect-ratio:16/10;border:1px solid var(--line);border-radius:14px;cursor:pointer;
+    background:linear-gradient(180deg,var(--tile),var(--tile2));
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Anton",sans-serif;font-size:clamp(26px,4.4vw,52px);color:var(--gold);
+    text-shadow:0 2px 0 #0a1a5a,0 0 18px rgba(247,201,72,.25);
+    transition:.18s transform,.18s box-shadow,.18s border-color,.25s opacity;
+    animation:pop .5s both;
+  }
+  .tile:hover:not(.used){transform:translateY(-4px) scale(1.02);border-color:var(--gold);
+    box-shadow:0 0 0 1px var(--gold),0 16px 30px -12px rgba(247,201,72,.5)}
+  .tile.dd::after{content:"★";position:absolute;font-size:14px;color:transparent} /* hidden hint */
+  .tile.used{cursor:default;opacity:.28;color:transparent;background:linear-gradient(180deg,#0c1238,#0a0f2e);
+    box-shadow:none;border-style:dashed}
+  .tile.used::before{content:"✓";color:var(--muted);font-family:"Bricolage Grotesque";font-size:clamp(20px,3vw,34px)}
+  @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+
+  /* modal */
+  .overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;
+    background:rgba(4,7,22,.72);backdrop-filter:blur(8px);z-index:50}
+  .overlay.show{display:flex;animation:fade .2s both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .card{
+    width:min(900px,96vw);background:linear-gradient(170deg,#16225f,#0c1340);
+    border:1px solid var(--gold);border-radius:22px;padding:clamp(22px,4vw,46px);
+    box-shadow:0 30px 80px -20px #000,0 0 0 6px rgba(247,201,72,.08);
+    animation:rise .28s cubic-bezier(.2,.9,.2,1) both;text-align:center;position:relative
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+  .tag{display:inline-flex;gap:10px;align-items:center;color:var(--gold-soft);font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;font-size:14px;margin-bottom:18px}
+  .tag .v{font-family:"Anton",sans-serif;font-size:24px;color:var(--gold)}
+  .dd-banner{display:none;margin:0 auto 14px;width:max-content;background:var(--gold);color:#3a2a02;
+    font-weight:800;letter-spacing:.1em;padding:6px 16px;border-radius:999px;font-size:13px;
+    text-transform:uppercase;animation:pulse 1s infinite alternate}
+  @keyframes pulse{to{box-shadow:0 0 24px rgba(247,201,72,.8)}}
+  .q{font-size:clamp(22px,3.6vw,40px);font-weight:600;line-height:1.25;margin:0 0 8px}
+  .a{font-size:clamp(20px,3vw,34px);font-weight:700;color:var(--gold);margin:18px 0 0;
+    min-height:1.2em;opacity:0;transform:translateY(10px);transition:.3s}
+  .a.show{opacity:1;transform:none}
+  .a small{display:block;font-weight:500;color:var(--muted);font-size:15px;margin-top:6px}
+  .modal-tools{margin-top:26px;display:flex;flex-direction:column;gap:14px;align-items:center}
+  .award{display:none;flex-wrap:wrap;gap:8px;justify-content:center}
+  .award .t{cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);
+    border-radius:11px;padding:10px 14px;font-family:inherit;font-weight:600;font-size:15px;transition:.15s}
+  .award .t:hover{border-color:var(--good);background:rgba(55,211,155,.16)}
+  .award .t b{font-family:"Anton",sans-serif;color:var(--gold);margin-left:6px}
+  footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+  footer b{color:var(--gold-soft)}
+
+  /* goals modal */
+  .goals{text-align:left;max-width:760px}
+  .goals h2{font-family:"Anton";font-weight:400;color:var(--gold);font-size:30px;margin:0 0 6px;text-transform:uppercase}
+  .goals .sub{color:var(--muted);margin:0 0 18px}
+  .goal{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+  .goal h3{margin:0 0 4px;color:var(--gold-soft);font-size:18px}
+  .goal .omr{color:var(--muted);font-size:13px;margin-bottom:8px;font-style:italic}
+  .goal ul{margin:0;padding-left:20px} .goal li{margin:4px 0;line-height:1.4}
+  .close-x{position:absolute;top:14px;right:16px;border:none;background:transparent;color:var(--muted);
+    font-size:26px;cursor:pointer;line-height:1} .close-x:hover{color:var(--gold)}
+  @media(max-width:560px){.board{grid-template-columns:repeat(4,1fr);gap:6px}.cat{font-size:11px;padding:8px 4px;min-height:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>Jeopardy · Uge 25</h1>
+      <p>Repetition i eksamensugen for <b>8B &amp; 8D</b> — matematik, historie og religion.
+         Klik et felt → læs spørgsmålet → <b>Vis svar</b> → giv holdet point.</p>
+    </div>
+    <div class="tools">
+      <button class="btn ghost" id="goalsBtn">🎯 Læringsmål</button>
+      <button class="btn ghost" id="addTeam">＋ Tilføj hold</button>
+      <button class="btn gold" id="reset">↺ Nyt spil</button>
+    </div>
+  </header>
+
+  <div class="teams" id="teams"></div>
+  <div class="board" id="board"></div>
+
+  <footer>Uge 25 · let repetitionsuge · spørgsmål er forankret i <b>Fælles Mål</b> for 8. klasse — se 🎯 Læringsmål.</footer>
+</div>
+
+<!-- Question modal -->
+<div class="overlay" id="qOverlay">
+  <div class="card">
+    <button class="close-x" data-close>×</button>
+    <div class="dd-banner" id="ddBanner">★ Dobbelt point ★</div>
+    <div class="tag"><span id="qCat">Kategori</span><span class="v" id="qVal">100</span></div>
+    <p class="q" id="qText">Spørgsmål</p>
+    <p class="a" id="aText"></p>
+    <div class="modal-tools">
+      <button class="btn gold" id="revealBtn">Vis svar</button>
+      <div class="award" id="award"></div>
+      <button class="btn ghost" id="noPoints" style="display:none">Luk uden point</button>
+    </div>
+  </div>
+</div>
+
+<!-- Goals modal -->
+<div class="overlay" id="gOverlay">
+  <div class="card goals">
+    <button class="close-x" data-close>×</button>
+    <h2>Læringsmål</h2>
+    <p class="sub">Hvad eleverne repeterer og aktiverer gennem spillet. Skrevet i "Eleven kan…"-stil efter Fælles Mål.</p>
+    <div id="goalsList"></div>
+  </div>
+</div>
+
+<script>
+/* ---------- Data ---------- */
+const CATEGORIES = [
+  { name:"Matematik", items:[
+    {v:100, q:"Hvor mange flader har en terning?", a:"6"},
+    {v:200, q:"Hvad er rumfanget af en terning med sidelængden 3 cm?", a:"27 cm³", note:"3 × 3 × 3"},
+    {v:300, q:"Hvor mange cm³ går der på 1 liter?", a:"1000 cm³", note:"1 L = 1 dm³ = 1000 cm³"},
+    {v:400, q:"En kasse måler 5 × 4 × 2 cm. Hvad er rumfanget?", a:"40 cm³", note:"længde × bredde × højde"},
+    {v:500, q:"Fordobler du alle mål på en terning — hvor mange gange større bliver rumfanget?", a:"8 gange", note:"2³ = 8 (potens-effekten)"},
+  ]},
+  { name:"Historie", items:[
+    {v:100, q:"Hvilket år sluttede 2. verdenskrig i Europa?", a:"1945", note:"8. maj 1945"},
+    {v:200, q:"Hvad hed Danmarks politik over for Tyskland i de første besættelsesår?", a:"Samarbejdspolitikken"},
+    {v:300, q:"Hvilken dato blev Danmark besat af Tyskland?", a:"9. april 1940"},
+    {v:400, q:"Hvem var den britiske premierminister, der nægtede at give op i 1940?", a:"Winston Churchill", dd:true},
+    {v:500, q:"Hvad kaldes redningen i oktober 1943, hvor danske jøder flygtede over Øresund til Sverige?", a:"Jødeaktionen / flugten over Øresund"},
+  ]},
+  { name:"Religion", items:[
+    {v:100, q:"Hvilken religion tror på Jesus som Guds søn?", a:"Kristendommen"},
+    {v:200, q:"Hvad hedder muslimernes hellige bog?", a:"Koranen"},
+    {v:300, q:"I buddhismen — hvad kaldes den tilstand af befrielse, man stræber efter?", a:"Nirvana"},
+    {v:400, q:"Et 'livsspørgsmål' har ikke ét endeligt svar. Giv et eksempel.", a:"Fx 'Hvad er meningen med livet?' eller 'Hvad sker der, når vi dør?'", note:"alle gode bud tæller"},
+    {v:500, q:"Hvad kaldes et livssyn uden tro på en gud, hvor mennesket selv skaber meningen?", a:"Sekulær humanisme", note:"(ateistisk livssyn)"},
+  ]},
+  { name:"Blandet", items:[
+    {v:100, q:"Hvilken farve får man ved at blande blå og gul?", a:"Grøn"},
+    {v:200, q:"Hvem er Danmarks regent (konge) i 2026?", a:"Kong Frederik 10."},
+    {v:300, q:"Hvad er det kemiske symbol for guld?", a:"Au"},
+    {v:400, q:"Hvilken planet er størst i vores solsystem?", a:"Jupiter"},
+    {v:500, q:"Hvor mange medlemslande er der i FN?", a:"193"},
+  ]},
+];
+
+const GOALS = [
+  { fag:"Matematik", omr:"Fælles Mål · Geometri og måling", mal:[
+    "Eleven kan beregne rumfang og overfladeareal af rumlige figurer (terning, kasse, cylinder m.fl.).",
+    "Eleven kan omregne mellem måleenheder, fx liter og cm³.",
+    "Eleven kan forklare potens-effekten: fordobles alle mål, ottedobles rumfanget." ]},
+  { fag:"Historie", omr:"Fælles Mål · 2. verdenskrig & kildearbejde", mal:[
+    "Eleven kan redegøre for hovedtræk af Danmarks besættelse 1940–1945.",
+    "Eleven kan forklare samarbejdspolitikken og forskellige perspektiver på den.",
+    "Eleven kan sætte jødeaktionen i oktober 1943 ind i en historisk sammenhæng." ]},
+  { fag:"Religion", omr:"Fælles Mål · Livsfilosofi og etik", mal:[
+    "Eleven kan forklare, hvad et livsspørgsmål er, og give egne eksempler.",
+    "Eleven kan sammenligne, hvordan forskellige livssyn svarer på spørgsmål om mening og død.",
+    "Eleven kan formulere og begrunde egne tanker om livets store spørgsmål." ]},
+];
+
+/* ---------- State + persistence ---------- */
+const KEY = "uge25_jeopardy_v1";
+let state = load() || { teams:[{name:"Hold 1",score:0},{name:"Hold 2",score:0}], used:[] };
+function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
+const keyOf = (c,i)=> c+"-"+i;
+
+/* ---------- Render: teams ---------- */
+const teamsEl = document.getElementById("teams");
+function renderTeams(){
+  teamsEl.innerHTML = "";
+  state.teams.forEach((t,idx)=>{
+    const el = document.createElement("div"); el.className="team";
+    el.innerHTML = `
+      ${state.teams.length>1?`<button class="kill" title="Fjern hold">✕</button>`:""}
+      <input class="name" value="${escapeHtml(t.name)}" aria-label="Holdnavn">
+      <div class="score">${t.score}</div>
+      <div class="row">
+        <button class="chip minus">−100</button>
+        <button class="chip plus">+100</button>
+      </div>`;
+    el.querySelector(".name").addEventListener("input",e=>{ t.name=e.target.value; save(); renderAward(); });
+    el.querySelector(".plus").addEventListener("click",()=>{ t.score+=100; save(); renderTeams(); });
+    el.querySelector(".minus").addEventListener("click",()=>{ t.score-=100; save(); renderTeams(); });
+    const kill = el.querySelector(".kill");
+    if(kill) kill.addEventListener("click",()=>{ state.teams.splice(idx,1); save(); renderTeams(); });
+    teamsEl.appendChild(el);
+  });
+}
+
+/* ---------- Render: board ---------- */
+const boardEl = document.getElementById("board");
+function renderBoard(){
+  boardEl.innerHTML="";
+  CATEGORIES.forEach(c=>{ const h=document.createElement("div"); h.className="cat"; h.textContent=c.name; boardEl.appendChild(h); });
+  for(let r=0;r<5;r++){
+    CATEGORIES.forEach((c,ci)=>{
+      const item=c.items[r];
+      const tile=document.createElement("button");
+      tile.className="tile"; tile.style.animationDelay=(r*4+ci)*38+"ms";
+      tile.textContent=item.v;
+      if(state.used.includes(keyOf(ci,r))) tile.classList.add("used");
+      tile.addEventListener("click",()=>openQuestion(ci,r));
+      boardEl.appendChild(tile);
+    });
+  }
+}
+
+/* ---------- Question modal ---------- */
+const qOverlay=document.getElementById("qOverlay");
+const qCat=document.getElementById("qCat"), qVal=document.getElementById("qVal");
+const qText=document.getElementById("qText"), aText=document.getElementById("aText");
+const revealBtn=document.getElementById("revealBtn"), awardEl=document.getElementById("award");
+const noPoints=document.getElementById("noPoints"), ddBanner=document.getElementById("ddBanner");
+let current=null;
+
+function openQuestion(ci,ri){
+  if(state.used.includes(keyOf(ci,ri))) return;
+  const item=CATEGORIES[ci].items[ri];
+  current={ci,ri,item};
+  qCat.textContent=CATEGORIES[ci].name;
+  qVal.textContent=item.dd? item.v*2 : item.v;
+  qText.textContent=item.q;
+  aText.innerHTML = escapeHtml(item.a) + (item.note?`<small>${escapeHtml(item.note)}</small>`:"");
+  aText.classList.remove("show");
+  ddBanner.style.display=item.dd?"block":"none";
+  revealBtn.style.display="inline-block";
+  awardEl.style.display="none"; noPoints.style.display="none"; awardEl.innerHTML="";
+  qOverlay.classList.add("show");
+}
+function reveal(){
+  aText.classList.add("show");
+  revealBtn.style.display="none";
+  renderAward();
+  awardEl.style.display="flex"; noPoints.style.display="inline-block";
+}
+function renderAward(){
+  if(!current) return;
+  const pts = current.item.dd? current.item.v*2 : current.item.v;
+  awardEl.innerHTML="";
+  state.teams.forEach(t=>{
+    const b=document.createElement("button"); b.className="t";
+    b.innerHTML = escapeHtml(t.name)+` <b>+${pts}</b>`;
+    b.addEventListener("click",()=>{ t.score+=pts; finishQuestion(); });
+    awardEl.appendChild(b);
+  });
+}
+function finishQuestion(){
+  if(current){ state.used.push(keyOf(current.ci,current.ri)); }
+  save(); renderTeams(); renderBoard(); closeOverlays();
+}
+revealBtn.addEventListener("click",reveal);
+noPoints.addEventListener("click",finishQuestion);
+
+/* ---------- Goals modal ---------- */
+const gOverlay=document.getElementById("gOverlay");
+document.getElementById("goalsBtn").addEventListener("click",()=>{
+  const list=document.getElementById("goalsList"); list.innerHTML="";
+  GOALS.forEach(g=>{
+    const d=document.createElement("div"); d.className="goal";
+    d.innerHTML=`<h3>${g.fag}</h3><div class="omr">${g.omr}</div><ul>${g.mal.map(m=>`<li>${escapeHtml(m)}</li>`).join("")}</ul>`;
+    list.appendChild(d);
+  });
+  gOverlay.classList.add("show");
+});
+
+/* ---------- Controls ---------- */
+document.getElementById("addTeam").addEventListener("click",()=>{
+  if(state.teams.length>=6) return;
+  state.teams.push({name:"Hold "+(state.teams.length+1),score:0}); save(); renderTeams();
+});
+document.getElementById("reset").addEventListener("click",()=>{
+  if(!confirm("Nyt spil? Alle felter åbnes igen og holdscoren nulstilles.")) return;
+  state={ teams: state.teams.map(t=>({name:t.name,score:0})), used:[] };
+  save(); renderTeams(); renderBoard();
+});
+function closeOverlays(){ qOverlay.classList.remove("show"); gOverlay.classList.remove("show"); current=null; }
+document.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",closeOverlays));
+[qOverlay,gOverlay].forEach(o=>o.addEventListener("click",e=>{ if(e.target===o) closeOverlays(); }));
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeOverlays();
+  if(e.key===" " && qOverlay.classList.contains("show") && revealBtn.style.display!=="none"){ e.preventDefault(); reveal(); }
+});
+
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+/* ---------- Init ---------- */
+renderTeams(); renderBoard();
+</script>
+</body>
+</html>

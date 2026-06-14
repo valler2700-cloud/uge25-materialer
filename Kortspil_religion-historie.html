@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karakter-kort · Religion &amp; Historie (100 kort)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070b24;--bg2:#10184a;--gold:#f7c948;--gold-soft:#ffe08a;--ink:#eef2ff;
+    --muted:#97a3d6;--line:rgba(247,201,72,.16);--rel:#7bd389;--his:#7aa8ff;--beg:#ffb86b}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--ink);
+    background:var(--bg);background-image:radial-gradient(1100px 560px at 50% -10%,rgba(247,201,72,.16),transparent 60%),
+    radial-gradient(900px 700px at 110% 10%,rgba(80,120,255,.20),transparent 55%),linear-gradient(160deg,var(--bg),var(--bg2));
+    padding:clamp(16px,3vw,40px)}
+  .wrap{max-width:1280px;margin:0 auto}
+  h1{font-family:"Anton",sans-serif;font-weight:400;letter-spacing:.03em;text-transform:uppercase;
+    font-size:clamp(28px,5.5vw,60px);margin:0;color:var(--gold);text-shadow:0 2px 0 #b8860b,0 0 26px rgba(247,201,72,.4)}
+  .lead{color:var(--muted);font-size:clamp(14px,1.6vw,17px);margin:8px 0 22px;max-width:64ch}
+  .lead b{color:var(--gold-soft)}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px}
+  .search{flex:1 1 240px;min-width:200px;background:rgba(255,255,255,.06);border:1px solid var(--line);
+    color:var(--ink);border-radius:12px;padding:11px 14px;font-family:inherit;font-size:15px;outline:none}
+  .search::placeholder{color:var(--muted)}
+  .filt{display:flex;gap:8px;flex-wrap:wrap}
+  .fbtn{cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;color:var(--ink);
+    background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:999px;padding:9px 15px;transition:.15s}
+  .fbtn:hover{border-color:var(--gold)}
+  .fbtn.on{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
+  .meta{color:var(--muted);font-size:13px;margin:6px 0 18px}
+  .meta .print{color:var(--gold-soft);cursor:pointer;text-decoration:underline}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .card{aspect-ratio:5/7;perspective:1200px;cursor:pointer;animation:pop .4s both}
+  @keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+  .card.flip .inner{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;border:1px solid var(--line);
+    padding:16px;display:flex;flex-direction:column;overflow:hidden}
+  .front{background:linear-gradient(170deg,#172263,#0c1340);align-items:center;justify-content:center;text-align:center;gap:10px}
+  .front .num{position:absolute;top:10px;left:13px;font-family:"Anton";color:var(--muted);font-size:15px}
+  .front .cat{position:absolute;top:10px;right:13px;font-size:11px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.05em;padding:3px 9px;border-radius:999px}
+  .front .ico{font-size:46px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.4))}
+  .front .nm{font-family:"Anton";font-size:clamp(18px,2vw,24px);line-height:1.05;color:var(--gold);text-transform:uppercase}
+  .front .era{color:var(--muted);font-size:13px;font-weight:600}
+  .front .hint{position:absolute;bottom:10px;color:var(--muted);font-size:11px;opacity:.7}
+  .back{background:linear-gradient(170deg,#101a52,#0a1130);transform:rotateY(180deg);gap:7px}
+  .back .bnm{font-family:"Anton";color:var(--gold);font-size:16px;line-height:1;text-transform:uppercase;margin-bottom:2px}
+  .row{font-size:12.5px;line-height:1.3}
+  .row .k{color:var(--gold-soft);font-weight:700}
+  .cat.R{background:rgba(123,211,137,.18);color:var(--rel)}
+  .cat.H{background:rgba(122,168,255,.18);color:var(--his)}
+  .cat.B{background:rgba(255,184,107,.2);color:var(--beg)}
+  .empty{color:var(--muted);padding:40px 0;text-align:center}
+
+  @media print{
+    body{background:#fff;color:#000;padding:0}
+    h1,.lead,.bar,.meta{display:none}
+    .grid{grid-template-columns:repeat(3,1fr);gap:6px}
+    .card{aspect-ratio:auto;height:auto;perspective:none;animation:none;page-break-inside:avoid;border:1px solid #999;border-radius:8px;padding:8px}
+    .inner{transform:none!important;transform-style:flat}
+    .face{position:static;border:none;padding:0;backface-visibility:visible}
+    .front{background:none;align-items:flex-start;text-align:left;padding-bottom:4px;border-bottom:1px solid #ccc;margin-bottom:4px}
+    .front .num,.front .cat,.front .hint{position:static}
+    .front .ico{display:none}.front .nm{color:#000;font-size:15px}.front .era{color:#333}
+    .front .cat{color:#000;background:none;border:1px solid #999}
+    .back{background:none;transform:none;display:block}.back .bnm{display:none}.back .k{color:#000}
+    .row{color:#000;font-size:11px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Karakter-kort · Religion &amp; Historie</h1>
+  <p class="lead">100 kort med blandede <b>religiøse og historiske</b> personer. Klik et kort for at
+     vende det — bagsiden viser <b>hvornår · hvem · hvad · konsekvens</b>. Brug dem til quiz, tidslinje
+     eller "gæt personen". <span style="color:var(--gold-soft)">Spil-idéer nederst.</span></p>
+
+  <div class="bar">
+    <input class="search" id="q" placeholder="🔎 Søg efter navn …">
+    <div class="filt" id="filt">
+      <button class="fbtn on" data-f="A">Alle</button>
+      <button class="fbtn" data-f="R">🕊️ Religiøse</button>
+      <button class="fbtn" data-f="H">🏛️ Historiske</button>
+      <button class="fbtn" data-f="B">⭐ Begge</button>
+    </div>
+  </div>
+  <div class="meta"><span id="count"></span> · <span class="print" onclick="window.print()">🖨 Print kortene</span></div>
+
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" style="display:none">Ingen kort matcher søgningen.</p>
+
+  <p class="lead" style="margin-top:28px">
+    <b>Spil-idéer:</b> 1) <b>Tidslinje:</b> læg kort i rækkefølge efter "hvornår". ·
+    2) <b>Gæt personen:</b> læs bagsiden op, de andre gætter. ·
+    3) <b>Religiøs eller historisk?</b> sortér i to bunker. ·
+    4) <b>Memory/par:</b> match person med en begivenhed.
+  </p>
+</div>
+
+<script>
+const ICON={R:"🕊️",H:"🏛️",B:"⭐"}, LABEL={R:"Religiøs",H:"Historisk",B:"Begge"};
+// [navn, kategori(R/H/B), hvornår, hvem, hvad, konsekvens/omfang]
+const D=[
+["Jesus fra Nazaret","R","ca. 4 f.v.t.–30 e.v.t.","Jødisk vandreprædikant, kristendommens centrale skikkelse","Forkyndte næstekærlighed og tilgivelse; korsfæstet i Jerusalem","Grundlag for kristendommen – verdens største religion (~2,4 mia.)"],
+["Muhammad","R","ca. 570–632","Islams profet fra Mekka","Modtog (iflg. islam) Koranen og samlede Den Arabiske Halvø","Grundlagde islam – ca. 1,9 mia. muslimer i dag"],
+["Buddha (Siddhartha Gautama)","R","ca. 563–483 f.v.t.","Indisk prins, der søgte sandheden","Blev oplyst og lærte om lidelse og vejen til nirvana","Grundlag for buddhismen (~500 mio. tilhængere)"],
+["Moses","R","ca. 1200-tallet f.v.t.","Jødisk profet og leder","Førte (iflg. traditionen) israelitterne ud af Egypten og modtog De Ti Bud","Central i jødedom, kristendom og islam"],
+["Abraham","R","ca. 1800 f.v.t. (traditionelt)","Patriark og stamfader","Indgik (iflg. traditionen) en pagt med Gud","Fælles 'fader' for jødedom, kristendom og islam"],
+["Martin Luther","R","1483–1546","Tysk munk og teolog","Kritiserede kirken (95 teser, 1517) og oversatte Bibelen","Startede Reformationen og protestantismen"],
+["Moder Teresa","R","1910–1997","Katolsk nonne i Indien","Hjalp fattige, syge og døende i Kolkata","Symbol på næstekærlighed; helgenkåret, Nobels Fredspris"],
+["Dalai Lama (den 14.)","R","født 1935","Tibets buddhistiske leder","Førte en fredelig kamp for Tibet i eksil","Nobels Fredspris 1989; verdenskendt fredsstemme"],
+["Konfutse (Confucius)","R","551–479 f.v.t.","Kinesisk filosof","Lærte om etik, respekt og harmoni i samfundet","Konfucianismen præger Østasien den dag i dag"],
+["Guru Nanak","R","1469–1539","Indisk åndelig lærer","Forkyndte én Gud og lighed mellem mennesker","Grundlagde sikhismen (~25 mio. tilhængere)"],
+["Paulus","R","ca. 5–65 e.v.t.","Jødisk-kristen missionær","Rejste vidt og skrev mange breve i Det Nye Testamente","Gjorde kristendommen til en verdensreligion"],
+["Jomfru Maria","R","1. årh. f.v.t.–1. årh. e.v.t.","Jesu mor","Født Jesus (iflg. kristendommen jomfrufødsel)","Æret af milliarder i både kristendom og islam"],
+["Thomas Aquinas","R","1225–1274","Italiensk teolog og filosof","Forenede kristen tro med Aristoteles' fornuft","Kæmpe indflydelse på katolsk tænkning"],
+["Frans af Assisi","R","1181–1226","Italiensk munk","Levede i fattigdom og prædikede kærlighed til alt levende","Grundlagde franciskanerordenen; kendt natur-helgen"],
+["Johannes Døberen","R","1. årh. e.v.t.","Jødisk profet","Døbte mennesker – bl.a. Jesus – i Jordanfloden","Central forløber-skikkelse i kristendommen"],
+["Zarathustra","R","ca. 1000 f.v.t. (omdiskuteret)","Persisk profet","Lærte om kampen mellem det gode og det onde","Grundlagde zoroastrismen, en af de ældste religioner"],
+["Laozi","R","ca. 500-tallet f.v.t. (legendarisk)","Kinesisk vismand","Tilskrives skriftet Daodejing","Grundlag for daoismen"],
+["Pave Frans","R","født 1936","Den katolske kirkes overhoved (blev pave 2013)","Sætter fokus på fattige, flygtninge og klima","Åndelig leder for ca. 1,3 mia. katolikker"],
+["Pave Johannes Paul 2.","R","1920–2005","Polsk pave (1978–2005)","Rejste verden rundt og talte mod kommunismen","Medvirkede til kommunismens fald i Østeuropa"],
+["Desmond Tutu","R","1931–2021","Sydafrikansk ærkebiskop","Kæmpede fredeligt mod apartheid","Nobels Fredspris 1984; forsoningens stemme"],
+["N.F.S. Grundtvig","B","1783–1872","Dansk præst, digter og politiker","Skabte folkehøjskolen og skrev mange salmer","Præger dansk kirke, skole og folkelighed"],
+["Søren Kierkegaard","B","1813–1855","Dansk filosof og teolog","Skrev om tro, angst og det at vælge sit liv","Regnes som eksistentialismens far; verdensberømt"],
+["Martin Luther King Jr.","B","1929–1968","Amerikansk præst og borgerrettighedsleder","Ledte ikkevoldelig kamp; holdt 'I have a dream'-talen","Nobels Fredspris; ændrede USA's love mod racisme"],
+["Mahatma Gandhi","B","1869–1948","Indisk leder","Førte ikkevoldelig kamp for Indiens uafhængighed","Indien blev frit 1947; inspirerede verden"],
+["Jeanne d'Arc","B","ca. 1412–1431","Fransk bondepige","Ledte (iflg. visioner) den franske hær, blev brændt på bålet","Fransk nationalhelt; senere helgenkåret"],
+["Adolf Hitler","H","1889–1945","Tysk diktator (nazismen)","Startede 2. verdenskrig og stod bag Holocaust","Titmillioner døde; krigen ændrede verden"],
+["Winston Churchill","H","1874–1965","Britisk premierminister","Ledte Storbritannien gennem 2. verdenskrig","Central i nazismens nederlag"],
+["Josef Stalin","H","1878–1953","Sovjetisk diktator","Industrialiserede Sovjet med terror; kæmpede mod Hitler","Millioner døde; Sovjet blev en supermagt"],
+["Franklin D. Roosevelt","H","1882–1945","Amerikansk præsident","Indførte New Deal og førte USA ind i 2. verdenskrig","Hjalp verden ud af krise og krig"],
+["Erik Scavenius","H","1877–1962","Dansk udenrigs- og statsminister","Stod bag samarbejdspolitikken under besættelsen","Omdiskuteret: undgik kamp, men kritiseret hårdt"],
+["Anne Frank","H","1929–1945","Jødisk pige i skjul","Skrev dagbog mens familien gemte sig; døde i KZ-lejr","Hendes dagbog er blevet symbol på Holocausts ofre"],
+["Napoleon Bonaparte","H","1769–1821","Fransk kejser og general","Erobrede store dele af Europa","Napoleonskrigene ændrede Europas grænser"],
+["Julius Cæsar","H","100–44 f.v.t.","Romersk general og diktator","Udvidede Romerriget; blev myrdet i Senatet","Vendepunkt fra republik til kejserrige"],
+["Cleopatra","H","69–30 f.v.t.","Egyptens sidste farao","Indgik alliancer med romerske ledere","Egypten blev efter hende en romersk provins"],
+["Alexander den Store","H","356–323 f.v.t.","Makedonsk konge","Erobrede et kæmpe rige helt til Indien","Spredte græsk kultur over tre verdensdele"],
+["Djengis Khan","H","ca. 1162–1227","Mongolsk hersker","Samlede mongolerne og erobrede vældige områder","Skabte historiens største sammenhængende rige"],
+["Christofer Columbus","H","1451–1506","Italiensk søfarer","Nåede Amerika i 1492 på vej mod Asien","Startede europæisk kolonisering af Amerika"],
+["Isaac Newton","H","1643–1727","Engelsk fysiker og matematiker","Beskrev tyngdeloven og bevægelseslovene","Grundlag for hele den klassiske fysik"],
+["Albert Einstein","H","1879–1955","Tysk-amerikansk fysiker","Udviklede relativitetsteorien (E=mc²)","Revolutionerede vores forståelse af tid og rum"],
+["Charles Darwin","H","1809–1882","Engelsk naturforsker","Fremlagde evolutionsteorien","Ændrede synet på alt levende"],
+["Marie Curie","H","1867–1934","Polsk-fransk forsker","Opdagede radioaktivitet og to grundstoffer","Første person med to Nobelpriser"],
+["Leonardo da Vinci","H","1452–1519","Italiensk kunstner og opfinder","Malede Mona Lisa; tegnede maskiner langt forud for sin tid","Selve symbolet på renæssancens geni"],
+["Galileo Galilei","H","1564–1642","Italiensk astronom","Forsvarede at Jorden kredser om Solen","Regnes som den moderne videnskabs grundlægger"],
+["Nicolaus Copernicus","H","1473–1543","Polsk astronom","Foreslog at Solen – ikke Jorden – er i centrum","Vendte op og ned på verdensbilledet"],
+["William Shakespeare","H","1564–1616","Engelsk forfatter","Skrev Hamlet, Romeo og Julie m.fl.","Verdens mest spillede dramatiker"],
+["Abraham Lincoln","H","1809–1865","Amerikansk præsident","Vandt borgerkrigen og afskaffede slaveriet","Holdt USA samlet; blev myrdet"],
+["Nelson Mandela","H","1918–2013","Sydafrikansk leder","Sad 27 år i fængsel og afsluttede apartheid","Sydafrikas første sorte præsident; Nobels Fredspris"],
+["Rosa Parks","H","1913–2005","Amerikansk aktivist","Nægtede at give sit bussæde til en hvid mand (1955)","Gnist til den amerikanske borgerrettighedsbevægelse"],
+["Karl den Store","H","742–814","Frankisk konge og kejser","Samlede store dele af Vesteuropa","Kaldes ofte 'Europas fader'"],
+["Harald Blåtand","H","ca. 935–986","Dansk konge","Samlede Danmark og indførte kristendommen (Jellingstenen)","Kaldes 'Danmarks dåbsattest'"],
+["Gorm den Gamle","H","død ca. 958","Dansk konge","Danmarks ældste kendte konge","Far til Harald Blåtand; Jellingmonumenterne"],
+["Knud den Store","H","ca. 995–1035","Dansk og engelsk konge","Herskede over et rige omkring Nordsøen","En af Danmarks største magtperioder"],
+["Margrete 1.","H","1353–1412","Dansk dronning og regent","Skabte Kalmarunionen i 1397","Samlede Danmark, Norge og Sverige under én krone"],
+["Christian 4.","H","1577–1648","Dansk konge","Byggede meget (bl.a. Rundetårn) og førte krige","En af Danmarks mest kendte og byggeglade konger"],
+["Tycho Brahe","H","1546–1601","Dansk astronom","Lavede meget præcise observationer af himlen","Hans data blev grundlag for moderne astronomi"],
+["H.C. Andersen","H","1805–1875","Dansk forfatter","Skrev eventyr som Den lille havfrue","Verdensberømt; oversat til over 100 sprog"],
+["Niels Bohr","H","1885–1962","Dansk fysiker","Udviklede atommodellen","Nobelpris; en af kvantefysikkens fædre"],
+["Karen Blixen","H","1885–1962","Dansk forfatter","Skrev bl.a. 'Den afrikanske farm'","Regnes til verdenslitteraturen"],
+["Dronning Margrethe 2.","H","født 1940","Danmarks dronning 1972–2024","Regerede i 52 år og abdicerede i 2024","Danmarks længst regerende monark nogensinde"],
+["Kong Frederik 10.","H","født 1968","Danmarks konge (fra 2024)","Overtog tronen efter sin mors abdikation","Danmarks nuværende regent"],
+["Mao Zedong","H","1893–1976","Kinesisk kommunistleder","Grundlagde Folkerepublikken Kina i 1949","Enorme omvæltninger; millioner berørt"],
+["Mikhail Gorbatjov","H","1931–2022","Sovjetisk leder","Indførte reformer (glasnost og perestrojka)","Berlinmurens fald og Sovjetunionens opløsning"],
+["John F. Kennedy","H","1917–1963","Amerikansk præsident","Håndterede Cubakrisen og startede rumkapløbet","Blev myrdet i 1963; ikon for en epoke"],
+["Dronning Victoria","H","1819–1901","Britisk dronning","Regerede da Det Britiske Imperium var størst","Gav navn til hele den 'victorianske' tid"],
+["Elizabeth 1.","H","1533–1603","Engelsk dronning","Skabte Englands guldalder og slog Den Spanske Armada","En af historiens mest magtfulde dronninger"],
+["Elizabeth 2.","H","1926–2022","Britisk dronning","Regerede i 70 år","Verdens længst regerende dronning"],
+["Katarina den Store","H","1729–1796","Russisk kejserinde","Udvidede og moderniserede Rusland","Gjorde Rusland til en europæisk stormagt"],
+["Johannes Gutenberg","H","ca. 1400–1468","Tysk opfinder","Opfandt bogtrykkerkunsten med løse typer (~1450)","Spredte viden og bøger i hele Europa"],
+["James Watt","H","1736–1819","Skotsk opfinder","Forbedrede dampmaskinen markant","Drev den industrielle revolution frem"],
+["Wright-brødrene","H","ca. 1903","Amerikanske opfindere","Gennemførte den første motorflyvning i 1903","Startede hele luftfartens historie"],
+["Thomas Edison","H","1847–1931","Amerikansk opfinder","Udviklede glødepæren og fonografen","Elektrificerede hverdagen"],
+["Alexander Graham Bell","H","1847–1922","Opfinder","Fik patent på telefonen (1876)","Revolutionerede menneskers kommunikation"],
+["Neil Armstrong","H","1930–2012","Amerikansk astronaut","Første menneske der gik på Månen (1969)","Milepæl i menneskets rumfart"],
+["Florence Nightingale","H","1820–1910","Britisk sygeplejerske","Grundlagde den moderne, hygiejniske sygepleje","Reddede utallige liv og ændrede sundhedsvæsenet"],
+["Louis Pasteur","H","1822–1895","Fransk forsker","Udviklede vacciner og pasteurisering","Reddede millioner fra smitsomme sygdomme"],
+["Sigmund Freud","H","1856–1939","Østrigsk læge","Grundlagde psykoanalysen","Ændrede måden vi forstår psyken på"],
+["Wolfgang Amadeus Mozart","H","1756–1791","Østrigsk komponist","Skrev over 600 værker fra barnsben","Et af musikhistoriens største genier"],
+["Ludwig van Beethoven","H","1770–1827","Tysk komponist","Skrev bl.a. den 9. symfoni – næsten døv","Bro mellem klassisk og romantisk musik"],
+["Pablo Picasso","H","1881–1973","Spansk maler","Var med til at skabe kubismen; malede Guernica","Revolutionerede den moderne kunst"],
+["Vincent van Gogh","H","1853–1890","Hollandsk maler","Malede Stjernenat; solgte næsten intet i live","I dag en af kunsthistoriens mest elskede"],
+["Aristoteles","H","384–322 f.v.t.","Græsk filosof","Skrev om logik, natur, etik og politik","Grundlag for vestlig videnskab og tænkning"],
+["Platon","H","ca. 427–347 f.v.t.","Græsk filosof","Grundlagde Akademiet og skrev om idéernes verden","En af grundlæggerne af vestlig filosofi"],
+["Sokrates","H","ca. 470–399 f.v.t.","Græsk filosof","Stillede spørgsmål for at finde sandheden (den sokratiske metode)","Dødsdømt; filosofiens store forbillede"],
+["Pythagoras","H","ca. 570–495 f.v.t.","Græsk matematiker","Knyttes til sætningen om den retvinklede trekant","Grundsten i geometri og matematik"],
+["Arkimedes","H","ca. 287–212 f.v.t.","Græsk matematiker og opfinder","Opdagede opdriftsloven og lavede opfindelser","Antikkens største naturvidenskabsmand"],
+["Hippokrates","H","ca. 460–370 f.v.t.","Græsk læge","Adskilte sygdom fra overtro; lægeløftet","Kaldes 'lægekunstens fader'"],
+["Vasco da Gama","H","ca. 1460–1524","Portugisisk søfarer","Fandt søvejen rundt om Afrika til Indien (1498)","Åbnede store handelsruter mellem Europa og Asien"],
+["Ferdinand Magellan","H","ca. 1480–1521","Portugisisk søfarer","Ledte den første ekspedition jorden rundt","Beviste i praksis, at Jorden kan omsejles"],
+["Marco Polo","H","1254–1324","Venetiansk opdagelsesrejsende","Rejste ad Silkevejen til Kina og skrev om det","Forbandt Europas og Asiens viden om hinanden"],
+["Saladin","B","1137–1193","Muslimsk sultan","Generobrede Jerusalem under korstogene (1187)","Legendarisk leder, respekteret af både muslimer og kristne"],
+["Richard Løvehjerte","H","1157–1199","Engelsk konge","Deltog i det 3. korstog mod Saladin","Ikon for middelalderens ridderkultur"],
+["Charles Dickens","H","1812–1870","Engelsk forfatter","Skrev sociale romaner som Oliver Twist","Påvirkede synet på fattigdom i sin tid"],
+["Astrid Lindgren","H","1907–2002","Svensk forfatter","Skabte bl.a. Pippi Langstrømpe","Elsket børnelitteratur i hele verden"],
+["Carl von Linné","H","1707–1778","Svensk botaniker","Opfandt systemet til at navngive arter","Grundlag for hele biologien"],
+["Gregor Mendel","B","1822–1884","Østrigsk munk og forsker","Opdagede arvelighedens love via forsøg med ærteplanter","Grundlag for moderne genetik"],
+["Ada Lovelace","H","1815–1852","Engelsk matematiker","Skrev verdens første 'computerprogram' (på papir)","Pioner for hele computervidenskaben"],
+["Alan Turing","H","1912–1954","Britisk matematiker","Knækkede den tyske Enigma-kode i 2. verdenskrig","Forkortede krigen; computerens grundlægger"],
+["Mary Shelley","H","1797–1851","Engelsk forfatter","Skrev Frankenstein som ung","Regnes som science fiction-genrens mor"],
+["Mansa Musa","B","ca. 1280–1337","Kejser af Mali","Foretog en berømt pilgrimsrejse til Mekka med enorm rigdom","Måske historiens rigeste person; Malis storhedstid"],
+["Hammurabi","H","ca. 1810–1750 f.v.t.","Babylonisk konge","Nedskrev en af verdens ældste lovsamlinger","Tidligt forbillede for skrevne retssystemer"]
+];
+
+const grid=document.getElementById("grid"), countEl=document.getElementById("count"),
+      emptyEl=document.getElementById("empty"), qEl=document.getElementById("q");
+let filter="A", search="";
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+function render(){
+  const list=D.map((c,i)=>({c,i}))
+    .filter(({c})=> (filter==="A"||c[1]===filter))
+    .filter(({c})=> c[0].toLowerCase().includes(search));
+  grid.innerHTML="";
+  list.forEach(({c,i},idx)=>{
+    const el=document.createElement("div"); el.className="card"; el.style.animationDelay=(idx%24*18)+"ms";
+    el.innerHTML=`<div class="inner">
+      <div class="face front">
+        <span class="num">#${i+1}</span><span class="cat ${c[1]}">${LABEL[c[1]]}</span>
+        <span class="ico">${ICON[c[1]]}</span>
+        <span class="nm">${esc(c[0])}</span>
+        <span class="era">${esc(c[2])}</span>
+        <span class="hint">tryk for at vende →</span>
+      </div>
+      <div class="face back">
+        <div class="bnm">${esc(c[0])}</div>
+        <div class="row"><span class="k">Hvornår:</span> ${esc(c[2])}</div>
+        <div class="row"><span class="k">Hvem:</span> ${esc(c[3])}</div>
+        <div class="row"><span class="k">Hvad:</span> ${esc(c[4])}</div>
+        <div class="row"><span class="k">Konsekvens/omfang:</span> ${esc(c[5])}</div>
+      </div></div>`;
+    el.addEventListener("click",()=>el.classList.toggle("flip"));
+    grid.appendChild(el);
+  });
+  emptyEl.style.display=list.length?"none":"block";
+  countEl.textContent=`${list.length} kort`+(filter!=="A"||search?` (af ${D.length})`:"");
+}
+document.getElementById("filt").addEventListener("click",e=>{
+  const b=e.target.closest(".fbtn"); if(!b) return;
+  document.querySelectorAll(".fbtn").forEach(x=>x.classList.remove("on")); b.classList.add("on");
+  filter=b.dataset.f; render();
+});
+qEl.addEventListener("input",()=>{ search=qEl.value.toLowerCase().trim(); render(); });
+render();
+</script>
+</body>
+</html>
