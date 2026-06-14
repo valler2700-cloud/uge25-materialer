@@ -1,41 +1,52 @@
-# Karakter-kamp — elevark
+# ⚔️ Karakter-kamp — elevark
 
-*Religion & historie · navn: _______________________  klasse: _______  dato: _______*
+*Religion & historie · 8. klasse · navn: _______________________  klasse: _______  dato: _______*
 
-I skal spille med **52 kort** med berømte personer fra religion og historie. Hver person har
-fire point-tal (stats). På **forsiden** står navnet og de fire stats. På **bagsiden** står
-fakta: *hvornår · hvem · hvad · konsekvens/omfang*.
+## Hvad er det her?
 
-> De fire stats: ⏳ **Alder** (hvor langt tilbage) · 🌍 **Indflydelse** (hvor meget personen
-> ændrede historien — på godt og ondt) · 👥 **Udbredelse** (hvor mange mennesker) ·
-> ⭐ **Eftermæle** (hvor kendt i dag).
+**Karakter-kamp** er et kortspil med **52 berømte personer** fra religion og historie, lige fra
+Jesus og Buddha til Einstein, Hitler og Nelson Mandela. I spiller to spil med kortene og arbejder
+bagefter selv videre med personerne. I kan spille og løse arket uden hjælp fra læreren. Alt, hvad I
+skal vide, står her.
+
+**I skal bruge:** de 52 kort, denne side og en blyant.
+
+## Sådan er et kort bygget op
+
+Hver person har et kort med en **forside** og en **bagside**:
+
+- **Forsiden:** personens navn og **fire point-tal (stats)**.
+- **Bagsiden:** fakta om personen, altså *hvornår · hvem · hvad · konsekvens/omfang*.
+
+> **De fire stats:**
+> ⏳ **Alder** (hvor langt tilbage personen levede) · 🌍 **Indflydelse** (hvor meget personen ændrede
+> historien, på godt og ondt) · 👥 **Udbredelse** (hvor mange mennesker det berører) ·
+> ⭐ **Eftermæle** (hvor kendt personen er i dag).
 >
-> **Husk:** Et højt tal betyder *stor betydning* — ikke at personen var "god". Nogle af de mest
-> indflydelsesrige personer gjorde frygtelige ting.
+> **Vigtigt:** Et højt tal betyder stor betydning. Det betyder *ikke*, at personen var "god". Nogle
+> af de mest indflydelsesrige mennesker i historien gjorde frygtelige ting.
 
 ---
 
 ## Spil 1 — ⚔️ Trumf-dyst (2 spillere)
 
-1. Bland kortene og del dem **ligeligt** (26 til hver). Hold jeres bunke, så I ikke kan se
-   modstanderens.
+1. Bland kortene, og del dem **ligeligt** (26 til hver). Hold jeres bunke, så modstanderen ikke kan se den.
 2. Den, der har tur, ser sit øverste kort og vælger **én stat** (fx 🌍 Indflydelse).
-3. I vender begge øverste kort. **Højeste tal vinder** begge kort — læg dem nederst i din bunke.
-4. **Uafgjort?** Læg kortene i en bunke i midten. Vinderen af næste runde tager dem.
+3. I vender begge jeres øverste kort. **Højeste tal vinder** begge kort. Læg dem nederst i din bunke.
+4. **Uafgjort?** Læg kortene i en bunke i midten. Vinderen af næste runde tager dem alle.
 5. Den, der vandt, vælger næste stat.
-6. **Vinder:** den, der til sidst har alle kort — eller flest, når I stopper.
+6. **Vinder:** den, der til sidst har alle kort, eller flest, når I stopper.
 
-**Spil-snak:** Når du vælger en stat, så sig *hvorfor* din person er stærk på den
-("Einstein har høj eftermæle, fordi han stadig er verdenskendt").
+**Spil-snak:** Når du vælger en stat, så sig hvorfor din person er stærk på den ("*Einstein har højt
+eftermæle, fordi han stadig er verdenskendt*").
 
 ---
 
 ## Spil 2 — ⏳ Tidslinje
 
 1. Læg ét kort på bordet som start.
-2. Træk et nyt kort. **Kig kun på navnet — ikke årstallet!** Hvor på tidslinjen hører
-   personen til? (ældst til venstre)
-3. Læg kortet, hvor I tror, det skal være. **Vend det** og tjek årstallet på bagsiden.
+2. Træk et nyt kort. **Kig kun på navnet, ikke på bagsiden!** Hvor på tidslinjen hører personen til? (ældst til venstre)
+3. Læg kortet, hvor I tror, det skal ligge. Vend det så om, og tjek årstallet på bagsiden.
 4. Rigtigt = **1 point**. Spil 16 kort. Flest point vinder.
 
 ---
@@ -57,25 +68,29 @@ Skriv de personer, du placerede, og deres årstal (fra bagsiden). Sæt ✓, hvis
 
 **Hvem levede længst tilbage af dem, du trak?** ______________________________
 
-**Hvilken person overraskede dig mest (var ældre/yngre end du troede)?** ______________________
+**Hvilken person overraskede dig mest (var ældre eller yngre, end du troede)?** ______________________
 
 ---
 
 ## Arbejdsark B — Gæt personen
 
-Én læser bagsiden op (hvornår · hvem · hvad · konsekvens) **uden** at sige navnet. De andre gætter.
-Skriv tre personer, I gættede, og ét nyt, du lærte om dem:
+Én læser bagsiden op (*hvornår · hvem · hvad · konsekvens*) uden at sige navnet. De andre gætter.
+Skriv tre personer, I gættede, og én ny ting, du lærte om hver:
 
-1. **Person:** ______________  **Noget nyt jeg lærte:** ____________________________________
-2. **Person:** ______________  **Noget nyt jeg lærte:** ____________________________________
-3. **Person:** ______________  **Noget nyt jeg lærte:** ____________________________________
+1. **Person:** ______________  **Noget nyt, jeg lærte:** ____________________________________
+2. **Person:** ______________  **Noget nyt, jeg lærte:** ____________________________________
+3. **Person:** ______________  **Noget nyt, jeg lærte:** ____________________________________
 
 ---
 
 ## Arbejdsark C — Design dit eget kort
 
-Find en person, der **mangler** i dækket (spørg evt. din lærer). Lav et nyt kort om personen.
-Brug en bog eller nettet til at finde fakta — og **begrund** dine point-tal.
+Find en person, der **mangler** i dækket (spørg eventuelt din lærer). Lav et nyt kort om personen, og
+begrund dine point-tal.
+
+> **🔎 Slå op, og tjek dine fakta** (pålidelige danske sider):
+> [lex.dk](https://lex.dk) (Den Store Danske / Trap Danmark) og [danmarkshistorien.dk](https://danmarkshistorien.dk) (Aarhus Universitet).
+> Skriv kun fakta, du har tjekket, ikke noget du "tror".
 
 **Navn:** ______________________________   **Kategori:** ☐ Religiøs ☐ Historisk ☐ Begge
 
@@ -85,9 +100,9 @@ Brug en bog eller nettet til at finde fakta — og **begrund** dine point-tal.
 - **Hvad gjorde personen:** _______________________________________________________
 - **Konsekvens/omfang:** __________________________________________________________
 
-**Forsiden (point 1-100) — skriv en kort begrundelse for hvert tal:**
+**Forsiden (point 1–100), skriv en kort begrundelse for hvert tal:**
 
-| Stat | Tal (1-100) | Begrundelse |
+| Stat | Tal (1–100) | Begrundelse |
 |---|---|---|
 | ⏳ Alder |   |   |
 | 🌍 Indflydelse |   |   |
@@ -96,16 +111,15 @@ Brug en bog eller nettet til at finde fakta — og **begrund** dine point-tal.
 
 **Hvorfor fortjener netop denne person en plads i dækket?**
 _______________________________________________________________________________
-_______________________________________________________________________________
 
 ---
 
 ## Tænk over det (skriv kort)
 
-1. **Kan man måle et menneskes betydning med tal?** Hvad fanger tallene godt — og hvad går tabt?
+1. **Kan man måle et menneskes betydning med tal?** Hvad fanger tallene godt, og hvad går tabt?
 _______________________________________________________________________________
 
-2. **Kig på de 52 kort. Hvem mangler?** (fx kvinder, almindelige mennesker, personer fra andre
+2. **Kig på de 52 kort. Hvem mangler?** (fx kvinder, almindelige mennesker eller personer fra andre
 dele af verden). Hvad fortæller det om, hvem vi plejer at huske?
 _______________________________________________________________________________
 
