@@ -67,6 +67,35 @@
   .mbtn:hover{border-color:var(--gold)}
   .mbtn.on{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
 
+  .dyst{max-width:560px;margin:0 auto;text-align:center}
+  .dyst .turn{font-family:"Anton";font-size:22px;color:var(--gold);text-transform:uppercase;margin:0 0 4px}
+  .dyst .score{color:var(--muted);font-size:15px;margin:0 0 14px}
+  .dyst .score b{color:var(--gold-soft)}
+  .dyst .note{color:var(--muted);font-size:12.5px;margin:6px 0 16px;font-style:italic}
+  .dcard{background:linear-gradient(170deg,#172263,#0c1340);border:1px solid var(--line);
+    border-radius:18px;padding:18px;margin:0 auto}
+  .dcard .dnm{font-family:"Anton";font-size:22px;color:var(--gold);text-transform:uppercase;line-height:1.05}
+  .dcard .dera{color:var(--muted);font-size:13px;margin-bottom:10px}
+  .statline{display:flex;justify-content:space-between;align-items:center;gap:10px;
+    border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:7px 0;
+    font-size:16px;cursor:pointer;background:rgba(255,255,255,.04);transition:.13s}
+  .statline:hover{border-color:var(--gold);background:rgba(247,201,72,.10)}
+  .statline .sv{font-family:"Anton";font-size:20px;color:var(--gold-soft)}
+  .statline.win{background:rgba(123,211,137,.18);border-color:var(--rel)}
+  .statline.lose{opacity:.55}
+  .statline.pick{pointer-events:none}
+  .reveal{display:flex;gap:12px;justify-content:center;align-items:stretch;flex-wrap:wrap}
+  .reveal .dcard{flex:1 1 220px}
+  .dmsg{font-family:"Anton";font-size:20px;text-transform:uppercase;margin:12px 0;min-height:24px}
+  .dmsg.win1,.dmsg.win2{color:var(--rel)} .dmsg.tie{color:var(--beg)}
+  .dbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .dbtns button{cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;border-radius:10px;
+    padding:10px 16px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink)}
+  .dbtns button.primary{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:#3a2a02;border-color:transparent}
+  .facedown{display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--muted);
+    background:repeating-linear-gradient(45deg,#0c1340,#0c1340 8px,#101a52 8px,#101a52 16px);
+    border:1px solid var(--line);border-radius:18px;min-height:160px}
+
   @media print{
     .modenav,#mode-dyst,#mode-tid{display:none!important}
     @page{size:A4 portrait;margin:10mm}
@@ -516,7 +545,92 @@ document.getElementById('modenav').addEventListener('click', function(e){
   showMode(b.dataset.m);
 });
 // stubs (replaced in later tasks)
-function initDyst(){}
+var DKEY = 'uge25_kortkamp_v1';
+var dgame = null, dphase = 'pick'; // 'pick' | 'reveal'
+
+function initDyst(){
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem(DKEY)); } catch(e){}
+  dgame = saved && saved.p1 ? saved : createGame(GAME);
+  dphase = 'pick';
+  renderDyst();
+}
+function saveDyst(){ try { localStorage.setItem(DKEY, JSON.stringify(dgame)); } catch(e){} }
+
+function statRow(card, key, cls){
+  var s = STATS.filter(function(x){return x.key===key;})[0];
+  return '<div class="statline ' + (cls||'') + '" data-key="' + key + '">' +
+         '<span>' + s.icon + ' ' + s.label + '</span>' +
+         '<span class="sv">' + statValue(card, key, OLDEST) + '</span></div>';
+}
+function cardHTML(card, showStats){
+  var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div>' +
+          '<div class="dera">' + esc(card[2]) + '</div>';
+  if(showStats) STATS.forEach(function(s){ h += statRow(card, s.key, ''); });
+  return h + '</div>';
+}
+
+function renderDyst(){
+  var m = document.getElementById('mode-dyst');
+  if(dgame.over){
+    var w = dgame.winner;
+    m.innerHTML = '<div class="dyst"><p class="turn">' +
+      (w === 0 ? 'Uafgjort!' : 'Spiller ' + w + ' vandt! 🏆') + '</p>' +
+      '<p class="score">Slut: 🟦 ' + dgame.p1.length + ' — ' + dgame.p2.length + ' 🟥</p>' +
+      '<div class="dbtns"><button class="primary" id="dnew">Nyt spil</button></div></div>';
+    document.getElementById('dnew').onclick = function(){ dgame = createGame(GAME); dphase='pick'; saveDyst(); renderDyst(); };
+    saveDyst();
+    return;
+  }
+  var active = dgame.turn;
+  var myTop = active === 1 ? dgame.p1[0] : dgame.p2[0];
+  if(dphase === 'pick'){
+    m.innerHTML = '<div class="dyst">' +
+      '<p class="turn">Din tur — Spiller ' + active + '</p>' +
+      '<p class="score">🟦 <b>' + dgame.p1.length + '</b> — <b>' + dgame.p2.length + '</b> 🟥' +
+        (dgame.pot.length ? ' · pulje: ' + dgame.pot.length : '') + '</p>' +
+      '<p class="note">Høje tal = stor historisk betydning — ikke at personen var „god".</p>' +
+      cardHTML(myTop, true) +
+      '<div class="dbtns"><button id="dstop">Stop &amp; tæl op</button>' +
+      '<button id="dnew2">Nyt spil</button></div></div>';
+    m.querySelectorAll('.statline').forEach(function(el){
+      el.onclick = function(){ pickStat(el.dataset.key); };
+    });
+  } else { // reveal
+    var a = dgame.last.a, b = dgame.last.b, key = dgame.last.key, res = dgame.last.winner;
+    var cls1 = res === 'A' ? 'win' : (res === 'B' ? 'lose' : '');
+    var cls2 = res === 'B' ? 'win' : (res === 'A' ? 'lose' : '');
+    function reveal(card, winCls){
+      var h = '<div class="dcard"><div class="dnm">' + esc(card[0]) + '</div><div class="dera">' + esc(card[2]) + '</div>';
+      STATS.forEach(function(s){
+        var extra = s.key === key ? (' ' + winCls) : ''; h += statRow(card, s.key, (s.key===key?'pick':'') + extra);
+      });
+      return h + '</div>';
+    }
+    var msg = res === 'tie' ? 'Uafgjort — til puljen!' : 'Spiller ' + (res==='A'?1:2) + ' vinder runden!';
+    m.innerHTML = '<div class="dyst">' +
+      '<p class="score">🟦 <b>' + dgame.p1.length + '</b> — <b>' + dgame.p2.length + '</b> 🟥' +
+        (dgame.pot.length ? ' · pulje: ' + dgame.pot.length : '') + '</p>' +
+      '<div class="reveal">' + reveal(a, cls1) + reveal(b, cls2) + '</div>' +
+      '<p class="dmsg ' + (res==='tie'?'tie':(res==='A'?'win1':'win2')) + '">' + msg + '</p>' +
+      '<div class="dbtns"><button class="primary" id="dnext">Næste runde</button></div></div>';
+    document.getElementById('dnext').onclick = function(){ dphase = 'pick'; renderDyst(); };
+  }
+  var stop = document.getElementById('dstop'); if(stop) stop.onclick = stopCount;
+  var nw = document.getElementById('dnew2'); if(nw) nw.onclick = function(){ dgame = createGame(GAME); dphase='pick'; saveDyst(); renderDyst(); };
+}
+
+function pickStat(key){
+  dgame = applyRound(dgame, key, OLDEST);
+  dphase = 'reveal';
+  saveDyst();
+  renderDyst();
+}
+function stopCount(){
+  var w = leader(dgame);
+  dgame.over = true; dgame.winner = w;
+  saveDyst(); renderDyst();
+}
 function initTid(){}
 </script>
 </body>
