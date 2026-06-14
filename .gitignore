@@ -4,3 +4,7 @@ Escape-room_matematik_LAERER.docx
 
 # Lokale download-bundles
 *.zip
+
+# Udviklings-artefakter (ikke undervisningsmateriale) — bevaret i git-historikken
+docs/
+tests/
