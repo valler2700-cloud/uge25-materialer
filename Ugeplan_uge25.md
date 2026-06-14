@@ -36,9 +36,9 @@
 ### Onsdag — 8B (8:00) + 8D (9:45)
 - **8B 8:00–9:30:** Let matematik — vælg fra **"Alternativer til film"** nedenfor
   (fx Blooket-/Gimkit-turnering, matematik-stjerneløb ude, eller brætspils-matematik).
-- **8D 9:45–11:15:** Rolig dag før eksamen. Fx **karakter-kortspillet**
-  (religion/historie, kobler til tirsdagens tema), Jeopardy eller brætspil. Lavt
-  pres — ingen film nødvendig.
+- **8D 9:45–11:15:** Rolig dag før eksamen. Fx **Karakter-kamp** — spil **Trumf-dyst**
+  eller **Tidslinje** (kobler til tirsdagens religionstema), Jeopardy eller brætspil. Lavt
+  pres — ingen film nødvendig. Se `Laerervejledning_Karakter-kamp`.
 
 ### Torsdag — 8D (formiddag, eksamen) + 8B (12:00)
 - **8D 8:00–9:30 og 9:45–11:15:** 8D's egen eksamensdag — mange væk. For de
@@ -57,6 +57,10 @@
 hvor mange der møder op.*
 
 **Skærmfrit — spil & turnering**
+- **Karakter-kamp (kort/smartboard):** 52-kort Top Trumps om religiøse og historiske
+  personer — spil **Trumf-dyst** (dyst kort mod kort på point) eller **Tidslinje** (placér
+  personer kronologisk). Kan printes som rigtige spillekort. Åbn
+  `Kortspil_religion-historie.html`; se `Laerervejledning_Karakter-kamp` + `Elevark_Karakter-kamp`.
 - **Jeopardy (smartboard):** klikbart point-bræt i matematik, historie, religion
   + blandet, med holdscore. Åbn `Jeopardy_uge25.html`.
 - **Brætspilsdag:** du eller eleverne medbringer spil — Stratego, skak, Ticket to
@@ -82,8 +86,9 @@ hvor mange der møder op.*
 - **Lav-jeres-eget brætspil:** i grupper, gerne om et historisk emne fra året —
   kreativt + repetition.
 - **Origami / geometrisk kunst / tessellering:** matematik, der ser flot ud.
-- **Karakter-kortspil (religion/historie):** 100 kort til tidslinje, "gæt personen"
-  eller sortér religiøs/historisk. Åbn `Kortspil_religion-historie.html`.
+- **Design dit eget karakter-kort:** eleverne researcher en person, der mangler i
+  Karakter-kamp-dækket, og laver et nyt kort med begrundede point (skabelon i elevarket).
+  Stærk faglig opgave — kan fremlægges.
 
 ## Eksamensnerver-modul (~20–25 min)
 Kort trivselssnak, der passer begge klasser (8B mandag, 8D tirsdag). Formål:
@@ -135,16 +140,22 @@ Alle filer ligger i mappen og kan bruges direkte:
 - **Religionsforloeb_Livets-store-spoergsmaal** (Word) — 4-lektioners forløb, 8D tirsdag.
 - **Jeopardy_uge25.html** — interaktivt quiz-spil til smartboard (åbn i browser).
   Matematik, historie, religion + blandet, med læringsmål-knap.
-- **Kortspil_religion-historie.html** — 100 karakter-kort (religiøse + historiske
-  personer); bagsiden lærer hvornår/hvem/hvad/konsekvens. Til quiz, tidslinje, "gæt personen".
+- **Kortspil_religion-historie.html** — 100 karakter-kort + **Karakter-kamp**-spillet:
+  Trumf-dyst (Top Trumps) og Tidslinje med et 52-korts spildæk (point pr. person). Kan
+  printes som spillekort. Bagsiden lærer hvornår/hvem/hvad/konsekvens.
+- **Laerervejledning_Karakter-kamp** (Word) — fuld lærervejledning: regler, differentiering,
+  Fælles Mål, et ugeforløb og diskussionsspørgsmål.
+- **Elevark_Karakter-kamp** (Word) — spilleregler + arbejdsark (tidslinje-log, gæt personen,
+  design dit eget kort, refleksion).
 - **Rollespil_historie_stoettedokument** (Word) — scenariebaseret rollespil om
   2. verdenskrig, som eleverne selv sætter op.
 - **Escape-room_matematik_ELEV** (Word) — elev-ark til print (5 stationer → nødkode).
 - **Escape-room_matematik_LAERER** (Word) — lærervejledning med facit
   *(kun din lokale kopi — ikke lagt offentligt op)*.
 
-**Forslag til brug:** Jeopardy og karakter-kortspillet som "alternativer til film"
-ons/tors; escape room til 8B onsdag/torsdag; rollespillet i en historielektion.
+**Forslag til brug:** Jeopardy og **Karakter-kamp** som "alternativer til film" ons/tors
+(Karakter-kamp kan fylde flere lektioner — se ugeforløbet i lærervejledningen); escape room
+til 8B onsdag/torsdag; rollespillet i en historielektion.
 
 ---
 *Lavet som oplæg — ret frit til. Spørg, hvis du vil have flere konkrete aktiviteter,
