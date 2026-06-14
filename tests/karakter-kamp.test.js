@@ -64,4 +64,36 @@ ok('validate ok', ctx.validateGameData(good).ok === true);
 const bad = good.slice(0, 51);
 ok('validate wrong count', ctx.validateGameData(bad).ok === false);
 
+// --- Real data: eval D + data block in the same ctx ---
+const dataCtx = { Math: Math, console: console, Infinity: Infinity };
+vm.createContext(dataCtx);
+vm.runInContext(extract('/* ==PURE-LOGIC-START== */', '/* ==PURE-LOGIC-END== */'), dataCtx);
+const dMatch = HTML.match(/const D=(\[[\s\S]*?\n\];)/);
+if(!dMatch) throw new Error('D array not found');
+vm.runInContext('var D=' + dMatch[1], dataCtx);
+vm.runInContext(extract('/* ==DATA-START== */', '/* ==DATA-END== */'), dataCtx);
+
+const v = dataCtx.validateGameData(dataCtx.D);
+ok('real data valid: ' + JSON.stringify(v.errors), v.ok === true);
+ok('GAME has 52', dataCtx.GAME.length === 52);
+ok('OLDEST is Abraham -1800', dataCtx.OLDEST === -1800);
+
+// Full random playthrough: cards conserved (==52), terminates, winner decided
+const STATSKEYS = dataCtx.STATS.map(s => s.key);
+function playOnce(seedStart){
+  let seed = seedStart;
+  const rng = function(){ seed = (seed*1103515245+12345) & 0x7fffffff; return seed/0x7fffffff; };
+  let g = dataCtx.createGame(dataCtx.GAME, rng);
+  for(let n = 0; n < 100000 && !g.over; n++){
+    const total = g.p1.length + g.p2.length + g.pot.length;
+    if(total !== 52) return 'card count drifted to ' + total;
+    const key = STATSKEYS[Math.floor(rng()*STATSKEYS.length)];
+    g = dataCtx.applyRound(g, key, dataCtx.OLDEST);
+  }
+  if(!g.over) return 'did not terminate';
+  if(![0,1,2].includes(g.winner)) return 'bad winner';
+  return 'ok';
+}
+for(let s = 1; s <= 20; s++) ok('playthrough seed ' + s, playOnce(s) === 'ok');
+
 console.log('PURE LOGIC: ' + passed + ' assertions passed');

@@ -337,6 +337,66 @@ function validateGameData(D){
 }
 /* ==PURE-LOGIC-END== */
 
+/* ==DATA-START== */
+var GAMESTATS = {
+  "Jesus fra Nazaret":{y:5,i:99,u:98,e:97},
+  "Muhammad":{y:610,i:96,u:95,e:94},
+  "Buddha (Siddhartha Gautama)":{y:-500,i:90,u:82,e:88},
+  "Moses":{y:-1250,i:84,u:80,e:82},
+  "Abraham":{y:-1800,i:82,u:85,e:78},
+  "Martin Luther":{y:1483,i:88,u:70,e:80},
+  "Moder Teresa":{y:1910,i:62,u:55,e:85},
+  "Dalai Lama (den 14.)":{y:1935,i:58,u:50,e:80},
+  "Konfutse (Confucius)":{y:-551,i:85,u:78,e:82},
+  "Guru Nanak":{y:1469,i:66,u:58,e:64},
+  "Mahatma Gandhi":{y:1869,i:85,u:72,e:90},
+  "Martin Luther King Jr.":{y:1929,i:80,u:65,e:88},
+  "N.F.S. Grundtvig":{y:1783,i:60,u:45,e:70},
+  "Søren Kierkegaard":{y:1813,i:68,u:48,e:78},
+  "Jeanne d'Arc":{y:1412,i:58,u:50,e:80},
+  "Saladin":{y:1137,i:70,u:62,e:72},
+  "Mansa Musa":{y:1280,i:60,u:55,e:66},
+  "Adolf Hitler":{y:1889,i:95,u:90,e:90},
+  "Winston Churchill":{y:1874,i:84,u:78,e:86},
+  "Josef Stalin":{y:1878,i:90,u:85,e:84},
+  "Franklin D. Roosevelt":{y:1882,i:85,u:80,e:82},
+  "Anne Frank":{y:1929,i:55,u:60,e:88},
+  "Erik Scavenius":{y:1877,i:45,u:30,e:50},
+  "Harald Blåtand":{y:935,i:66,u:45,e:78},
+  "Gorm den Gamle":{y:900,i:50,u:30,e:58},
+  "Margrete 1.":{y:1353,i:64,u:48,e:70},
+  "Christian 4.":{y:1577,i:58,u:42,e:74},
+  "Tycho Brahe":{y:1546,i:70,u:55,e:72},
+  "H.C. Andersen":{y:1805,i:72,u:80,e:88},
+  "Niels Bohr":{y:1885,i:82,u:68,e:80},
+  "Dronning Margrethe 2.":{y:1940,i:50,u:40,e:72},
+  "Karen Blixen":{y:1885,i:58,u:55,e:70},
+  "Isaac Newton":{y:1643,i:94,u:80,e:90},
+  "Albert Einstein":{y:1879,i:95,u:85,e:95},
+  "Charles Darwin":{y:1809,i:92,u:78,e:88},
+  "Marie Curie":{y:1867,i:82,u:70,e:86},
+  "Galileo Galilei":{y:1564,i:86,u:72,e:84},
+  "Nicolaus Copernicus":{y:1473,i:84,u:68,e:78},
+  "Aristoteles":{y:-384,i:92,u:82,e:88},
+  "Sokrates":{y:-470,i:86,u:75,e:86},
+  "Pythagoras":{y:-570,i:80,u:72,e:84},
+  "Alan Turing":{y:1912,i:84,u:70,e:82},
+  "Leonardo da Vinci":{y:1452,i:88,u:78,e:92},
+  "Johannes Gutenberg":{y:1400,i:90,u:82,e:80},
+  "Napoleon Bonaparte":{y:1769,i:86,u:78,e:86},
+  "Julius Cæsar":{y:-100,i:88,u:80,e:88},
+  "Cleopatra":{y:-69,i:68,u:60,e:84},
+  "Alexander den Store":{y:-356,i:88,u:78,e:86},
+  "Christofer Columbus":{y:1451,i:82,u:75,e:80},
+  "Karl den Store":{y:742,i:80,u:68,e:74},
+  "Nelson Mandela":{y:1918,i:80,u:68,e:88},
+  "William Shakespeare":{y:1564,i:82,u:80,e:92}
+};
+D.forEach(function(c){ if(GAMESTATS[c[0]]) c[6] = GAMESTATS[c[0]]; });
+var GAME = D.filter(function(c){ return c[6]; });
+var OLDEST = Math.min.apply(null, GAME.map(function(c){ return c[6].y; }));
+/* ==DATA-END== */
+
 const grid=document.getElementById("grid"), countEl=document.getElementById("count"),
       emptyEl=document.getElementById("empty"), qEl=document.getElementById("q");
 let filter="A", search="";
