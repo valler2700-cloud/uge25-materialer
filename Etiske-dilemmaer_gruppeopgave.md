@@ -36,7 +36,7 @@ grundigt, før I går i gang. I skal bruge dem hele vejen igennem.
 ## Etik og religion
 
 Etik er ikke kun noget, filosofferne har fundet på. Religionerne har i tusinder af år givet bud på,
-hvordan man bør leve. Tre tanker går igen, og I kan bruge dem som en femte vinkel på dilemmaerne.
+hvordan man bør leve. Flere tanker går igen på tværs af religionerne, og I kan bruge dem som en femte vinkel på dilemmaerne.
 
 - **Den gyldne regel:** "Gør mod andre, som du ønsker, at de skal gøre mod dig." Den findes i
   næsten alle religioner og livssyn, både i kristendommen, jødedommen, islam og buddhismen.
@@ -46,6 +46,9 @@ hvordan man bør leve. Tre tanker går igen, og I kan bruge dem som en femte vin
   lige er gået forbi. Jesu pointe er, at din næste ikke kun er din egen familie eller dit eget
   folk. Det er ethvert menneske, der har brug for dig. Det, du gør, betyder mere end din status og
   dine pæne ord.
+- **Livets uendelige værdi (jødedom og islam):** "Den, der redder ét menneskeliv, har reddet en hel verden" (jødisk Mishna; samme tanke findes i Koranen 5,32). Det er et stærkt **modspil til regnestykket** i sporvogns- og Heinz-dilemmaet: kan man overhovedet veje liv op mod hinanden, hvis hvert liv er uendeligt?
+- **Den gyldne regel i islam:** "Ingen af jer tror helt, før han ønsker for sin næste, hvad han ønsker for sig selv" (efter en hadith).
+- **Medfølelse (buddhisme):** *karuna* (medfølelse) og *ahimsa* (ikke at skade) ligger tæt på både dydsetik og pligtetikkens "brug aldrig et menneske kun som middel".
 
 Læg mærke til, at Løgstrups nærhedsetik bygger bro mellem filosofi og religion. Tanken om, at vi
 holder noget af den andens liv i vores hånd, ligger tæt på buddet om at elske sin næste.
@@ -118,6 +121,12 @@ truet med at miste sit job, hvis hun siger det til nogen, og hun har selv en fam
 - Sæt vinklerne op mod hinanden. Hvilken vejer tungest for jer?
 
 ---
+
+### 7. Troen og den vigtige dag
+En klassekammerat faster af religiøse grunde (det kan være ramadan, yom kippur eller en kristen faste — det findes i mange religioner) og spiser eller drikker ikke i dagtimerne. Midt i fasten er der en vigtig idrætsdag eller prøve, hvor han bliver træt og svag. Læreren siger, at han da bare kan lade være med at faste den ene dag. Men det betyder meget for ham.
+- Skal man holde fast i en religiøs forpligtelse, også når den koster?
+- Hvornår vejer en religiøs pligt tungere end et praktisk hensyn — og hvem bestemmer det?
+- Hvad ville de fire etikker sige? Og hvad har vennen brug for af dig — pres eller respekt?
 
 ## Afrunding (fælles i klassen)
 

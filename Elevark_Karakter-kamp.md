@@ -114,6 +114,27 @@ _______________________________________________________________________________
 
 ---
 
+## Undersøgelse D — Eftermæle og kilder (kildekritik)
+
+Et korts ⭐ **Eftermæle** er ikke en fast sandhed — det er noget, mennesker *skriver*. Forskellige kilder fortæller tit vidt forskellige historier om den **samme** person. Det skal I undersøge.
+
+**D1 — to fortællinger om én person.** Vælg en omstridt person fra dækket — fx **Christofer Columbus** (helt og opdager? eller erobrer og kolonisator?). Find to korte kilder med hvert sit syn (slå op på lex.dk og danmarkshistorien.dk). Lav **kildekritik** af hver:
+
+| Spørgsmål | Kilde 1 | Kilde 2 |
+|---|---|---|
+| Hvem har lavet kilden (afsender)? |   |   |
+| Hvornår er den lavet? |   |   |
+| Hvad er formålet — hvad vil den have os til at mene? |   |   |
+| Hvilken **tendens** har den (hvad trækker den i)? |   |   |
+
+**Vurdér til sidst:** Hvilken fortælling er mest **lødig** (troværdig og veldokumenteret)? Og hvilket ⭐ Eftermæle-tal ville I give personen nu, hvor I har læst begge sider? Begrund.
+
+**D2 — fra tidslinje til sammenhæng.** Vælg to personer fra jeres tidslinje. Forklar **enten et brud** ("før denne person tænkte man …, efter …") **eller en kontinuitet** ("de levede langt fra hinanden, men kæmpede for det samme"). Find mindst én **årsag→følge**: hvordan påvirkede den ene tid den næste?
+
+> **Slå op, og tjek fakta:** [lex.dk](https://lex.dk) (Den Store Danske) og [danmarkshistorien.dk](https://danmarkshistorien.dk) (Aarhus Universitet). Skriv kun det, I har tjekket i en kilde.
+
+---
+
 ## Tænk over det (skriv kort)
 
 1. **Kan man måle et menneskes betydning med tal?** Hvad fanger tallene godt, og hvad går tabt?
