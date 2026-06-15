@@ -123,10 +123,10 @@ truet med at miste sit job, hvis hun siger det til nogen, og hun har selv en fam
 ---
 
 ### 7. Troen og den vigtige dag
-En klassekammerat faster af religiøse grunde (det kan være ramadan, yom kippur eller en kristen faste — det findes i mange religioner) og spiser eller drikker ikke i dagtimerne. Midt i fasten er der en vigtig idrætsdag eller prøve, hvor han bliver træt og svag. Læreren siger, at han da bare kan lade være med at faste den ene dag. Men det betyder meget for ham.
+En klassekammerat faster af religiøse grunde (det kan være ramadan, yom kippur eller en kristen faste, og det findes i mange religioner) og spiser eller drikker ikke i dagtimerne. Midt i fasten er der en vigtig idrætsdag eller prøve, hvor han bliver træt og svag. Læreren siger, at han da bare kan lade være med at faste den ene dag. Men det betyder meget for ham.
 - Skal man holde fast i en religiøs forpligtelse, også når den koster?
-- Hvornår vejer en religiøs pligt tungere end et praktisk hensyn — og hvem bestemmer det?
-- Hvad ville de fire etikker sige? Og hvad har vennen brug for af dig — pres eller respekt?
+- Hvornår vejer en religiøs pligt tungere end et praktisk hensyn? Og hvem bestemmer det?
+- Hvad ville de fire etikker sige? Og har vennen brug for, at I presser ham eller respekterer hans valg?
 
 ## Afrunding (fælles i klassen)
 

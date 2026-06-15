@@ -116,9 +116,9 @@ _______________________________________________________________________________
 
 ## Undersøgelse D — Eftermæle og kilder (kildekritik)
 
-Et korts ⭐ **Eftermæle** er ikke en fast sandhed — det er noget, mennesker *skriver*. Forskellige kilder fortæller tit vidt forskellige historier om den **samme** person. Det skal I undersøge.
+Et korts ⭐ **Eftermæle** er ingen fast sandhed. Det er noget, mennesker *skriver*, og forskellige kilder fortæller tit vidt forskellige historier om den **samme** person. Det skal I undersøge nærmere.
 
-**D1 — to fortællinger om én person.** Vælg en omstridt person fra dækket — fx **Christofer Columbus** (helt og opdager? eller erobrer og kolonisator?). Find to korte kilder med hvert sit syn (slå op på lex.dk og danmarkshistorien.dk). Lav **kildekritik** af hver:
+**D1: to fortællinger om én person.** Vælg en omstridt person fra dækket, for eksempel **Christofer Columbus** (helt og opdager? eller erobrer og kolonisator?). Find to korte kilder med hvert sit syn (slå op på lex.dk og danmarkshistorien.dk). Lav **kildekritik** af hver:
 
 | Spørgsmål | Kilde 1 | Kilde 2 |
 |---|---|---|
@@ -129,7 +129,7 @@ Et korts ⭐ **Eftermæle** er ikke en fast sandhed — det er noget, mennesker 
 
 **Vurdér til sidst:** Hvilken fortælling er mest **lødig** (troværdig og veldokumenteret)? Og hvilket ⭐ Eftermæle-tal ville I give personen nu, hvor I har læst begge sider? Begrund.
 
-**D2 — fra tidslinje til sammenhæng.** Vælg to personer fra jeres tidslinje. Forklar **enten et brud** ("før denne person tænkte man …, efter …") **eller en kontinuitet** ("de levede langt fra hinanden, men kæmpede for det samme"). Find mindst én **årsag→følge**: hvordan påvirkede den ene tid den næste?
+**D2: fra tidslinje til sammenhæng.** Vælg to personer fra jeres tidslinje. Forklar **enten et brud** ("før denne person tænkte man …, efter …") **eller en kontinuitet** ("de levede langt fra hinanden, men kæmpede for det samme"). Find mindst én **årsag→følge**: hvordan påvirkede den ene tid den næste?
 
 > **Slå op, og tjek fakta:** [lex.dk](https://lex.dk) (Den Store Danske) og [danmarkshistorien.dk](https://danmarkshistorien.dk) (Aarhus Universitet). Skriv kun det, I har tjekket i en kilde.
 
