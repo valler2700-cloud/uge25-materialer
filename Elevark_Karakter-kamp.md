@@ -49,6 +49,8 @@ eftermæle, fordi han stadig er verdenskendt*").
 3. Læg kortet, hvor I tror, det skal ligge. Vend det så om, og tjek årstallet på bagsiden.
 4. Rigtigt = **1 point**. Spil 16 kort. Flest point vinder.
 
+> 💡 **Fair spil (print-versionen):** Forsiden viser også de fire stats, og ⏳ Alder hænger sammen med årstallet. Dæk de fire tal til med en finger eller en brik, mens I gætter placeringen, så I gætter ud fra navnet og jeres viden, ikke ud fra Alder-tallet.
+
 ---
 
 ## Arbejdsark A — Tidslinje-log
@@ -114,6 +116,19 @@ _______________________________________________________________________________
 
 ---
 
+## Arbejdsark E — Religionernes stiftere (kristendomskundskab)
+
+Find de religiøse stiftere og centrale skikkelser i dækket (fx **Jesus, Buddha, Muhammad, Moses, Abraham, Guru Nanak, Konfutse**). Vælg **to fra hver sin religion**, og udfyld:
+
+| Person | Religion | Én **hovedtanke**, personen står for | Hvor ses den i dag? (en nutidig fremtrædelsesform) |
+|---|---|---|---|
+|   |   |   |   |
+|   |   |   |   |
+
+**Forhold jer til:** Hvad har de to hovedtanker til fælles, og hvor er de mest forskellige? Hvorfor tror I, netop disse tanker har holdt i tusinder af år?
+
+---
+
 ## Undersøgelse D — Eftermæle og kilder (kildekritik)
 
 Et korts ⭐ **Eftermæle** er ingen fast sandhed. Det er noget, mennesker *skriver*, og forskellige kilder fortæller tit vidt forskellige historier om den **samme** person. Det skal I undersøge nærmere.
@@ -131,7 +146,23 @@ Et korts ⭐ **Eftermæle** er ingen fast sandhed. Det er noget, mennesker *skri
 
 **D2: fra tidslinje til sammenhæng.** Vælg to personer fra jeres tidslinje. Forklar **enten et brud** ("før denne person tænkte man …, efter …") **eller en kontinuitet** ("de levede langt fra hinanden, men kæmpede for det samme"). Find mindst én **årsag→følge**: hvordan påvirkede den ene tid den næste?
 
+> *Skriv jeres sammenhæng som en kæde:* "Fordi [person 1] gjorde …, blev det muligt/nødvendigt for [person 2] at … — og det betyder for os i dag, at …"
+
 > **Slå op, og tjek fakta:** [lex.dk](https://lex.dk) (Den Store Danske) og [danmarkshistorien.dk](https://danmarkshistorien.dk) (Aarhus Universitet). Skriv kun det, I har tjekket i en kilde.
+
+---
+
+## Arbejdsark F — Kanonen i dækket (historie)
+
+Flere af de 52 personer knytter sig til historiekanonens 30 nedslag, bl.a. **Harald Blåtand / Gorm den Gamle** (Jellingstenen), **Margrete 1.** (Kalmarunionen), **Columbus**, **Martin Luther** (Reformationen), **Christian 4.** og **2.-verdenskrigs-personerne** (Holocaust og jødeaktionen 1943). Vælg **tre**, og udfyld:
+
+| Person | Kanon-nedslag | Hvorfor er netop dét nedslag vigtigt for at forstå sammenhæng i historien? |
+|---|---|---|
+|   |   |   |
+|   |   |   |
+|   |   |   |
+
+Placér til sidst jeres tre personer på en fælles tidslinje sammen med klassens øvrige kanonpunkter.
 
 ---
 
@@ -141,7 +172,7 @@ Et korts ⭐ **Eftermæle** er ingen fast sandhed. Det er noget, mennesker *skri
 _______________________________________________________________________________
 
 2. **Kig på de 52 kort. Hvem mangler?** (fx kvinder, almindelige mennesker eller personer fra andre
-dele af verden). Hvad fortæller det om, hvem vi plejer at huske?
+dele af verden). Hvad fortæller det om, hvem vi plejer at huske? **Tillæg:** Kig særligt på de **religiøse** personer i dækket — er alle de store verdensreligioner med? Hvilke mangler, og hvad fortæller udvalget om, hvilke religioner vi i Danmark kender bedst?
 _______________________________________________________________________________
 
 3. **Vælg en person, du synes har for høj eller for lav score.** Hvilken stat, og hvorfor?

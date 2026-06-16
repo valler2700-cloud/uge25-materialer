@@ -69,6 +69,8 @@ holder noget af den andens liv i vores hånd, ligger tæt på buddet om at elske
 
 ## Dilemmaerne
 
+> **✅ Sådan ser et godt fagligt svar ud.** Ikke: *"Jeg ville trække i håndtaget."* Men: *"Konsekvensetisk bør man trække (5 liv mod 1), men pligtetisk er det problematisk aktivt at vælge at dræbe én. Jeg vægter X, fordi …"*. Altså: **navngiv vinklen, brug et begreb, og giv en indvending.** Brug det som tjek på alle jeres svar herunder.
+
 ### 1. Sporvognen
 En løbsk sporvogn buldrer mod **fem** mennesker, der ikke kan nå væk. Du står ved et håndtag.
 Trækker du i det, skifter sporvognen spor, men så dræber den **ét** menneske, der står på det andet
@@ -128,11 +130,15 @@ En klassekammerat faster af religiøse grunde (det kan være ramadan, yom kippur
 - Hvornår vejer en religiøs pligt tungere end et praktisk hensyn? Og hvem bestemmer det?
 - Hvad ville de fire etikker sige? Og har vennen brug for, at I presser ham eller respekterer hans valg?
 
+**Dilemma 7b (udvidelse):** En elev vil bede eller faste i skoletiden, men det kolliderer med en obligatorisk aktivitet. Hvor går grænsen mellem den enkeltes **religionsfrihed** og **fællesskabets krav**? Brug pligtetik og nærhedsetik. Og husk, at religionsfrihed er en rettighed, ikke kun en privat smag.
+
 ## Afrunding (fælles i klassen)
 
 Hver gruppes fremlægger vælger ét dilemma og fortæller:
 - Hvad gruppen ville gøre, og hvilken vinkel der vejede tungest.
 - Hvor I var uenige i gruppen, og hvorfor.
+
+**Opgave (fælles): Behøver man religion for at handle godt?** Tag dilemma 2 (Heinz). Hvad svarer næstekærligheden? Hvad svarer en ren konsekvensetiker *uden* religion? Når de frem til det samme? Og betyder *begrundelsen* noget, selv når handlingen er ens?
 
 **Til sidst, tænk selv (skriv et par linjer):**
 1. Hvilken af vinklerne ligger tættest på din egen måde at tænke på? Hvorfor?

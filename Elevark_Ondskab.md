@@ -18,6 +18,15 @@ I arbejder som et lille forskerhold. Hver **undersøgelse** har tre skridt, som 
 
 > **Et godt fagligt svar** i religion lyder ikke "det tror jeg bare". Det lyder i stedet: *"Vi mener X, fordi kilde Y siger …, men man kan indvende, at …"*. Brug ordene fra kilderne.
 
+> **🧠 Begrebsbank — ord, I skal kunne bruge til sidst.** Udfyld undervejs med jeres egen korte forklaring:
+> - **teodicé:** ____________________________________________
+> - **den banale ondskab:** ____________________________________________
+> - **fri vilje:** ____________________________________________
+> - **syndefald:** ____________________________________________
+> - **dualisme:** ____________________________________________
+> - **forsyn (islam):** ____________________________________________
+> - **at "anklage Gud" (jødedom):** ____________________________________________
+
 ---
 
 ## Undersøgelse 1 – Hvad er ondskab?
@@ -62,6 +71,8 @@ I arbejder som et lille forskerhold. Hver **undersøgelse** har tre skridt, som 
 
 > **Kilde 5 – Job, manden der krævede et svar.** I Jobs Bog (Det Gamle Testamente) er Job et godt og uskyldigt menneske, der mister alt: sin familie, sin sundhed, sin rigdom. Hans venner siger, at han må have syndet, for ellers ville Gud ikke straffe ham. Men Job fastholder, at han er uskyldig, og kræver et svar af Gud: *hvorfor* rammer lidelsen den gode? Til sidst svarer Gud, men ikke med en forklaring. Han svarer med et modspørgsmål: *"Hvor var du, da jeg grundlagde jorden?"* (Job, kap. 38). Job får aldrig at vide hvorfor. *(Læs teksten: bibelselskabet.dk → Bibelen online → Jobs Bog.)*
 
+> **📖 Sådan læser vi teksterne i religion.** Vi læser Jobs Bog og fortællingen om syndefaldet som *tekster, mennesker har skrevet* for at tyde et svært spørgsmål, ikke som en facitliste. I skal undersøge, *hvad* teksten siger om lidelse, ikke afgøre, om den er "sand".
+
 > **Kilde 6 – Fire religioner, fire svar på "hvorfor findes lidelse?".** Studér skemaet:
 
 | Tradition | Svar på "hvorfor findes lidelse?" |
@@ -74,6 +85,8 @@ I arbejder som et lille forskerhold. Hver **undersøgelse** har tre skridt, som 
 **Jeres opgave (2A – rangér og forsvar):** Læs Kilde 4 og 6. **Rangér** svarene fra "mest overbevisende" til "mindst overbevisende", og skriv én sætning om hvorfor. Find så **den stærkeste indvending** mod jeres top-svar. Et svar er kun godt, hvis det kan tåle et modargument.
 
 **Jeres opgave (2B – det svære spørgsmål):** Buddhismen har slet ikke teodicé-problemet. **Hvorfor ikke?** (Tip: kig i Kilde 6. Hvad skal der til, før spørgsmålet overhovedet opstår?)
+
+**Jeres opgave (2C – indefra):** Vælg én af de fire religioner. Forestil jer, at I møder en troende fra netop den tradition, som lige har mistet en, de holdt af. Skriv to-tre sætninger, sådan som **vedkommende selv** kunne forklare, hvorfor lidelse findes — med ordene fra Kilde 6. (I skal ikke *vurdere* svaret her, men gengive det **indefra**, så det giver mening for den troende.)
 
 ---
 

@@ -18,6 +18,7 @@
   ikke, så find fejlen.
 - **💡 Hint** under hver opgave giver et lille skub, uden at afsløre svaret. Brug det kun, hvis I sidder fast.
 - **⭐ Ekstra** er en sværere bonus. Den ændrer ikke nødkoden, men giver ekstra rumkadet-ære.
+- **🛰️ Flugt-logbog:** Ved mindst **én** station skal I skrive 2–3 sætninger, der forklarer jeres fremgangsmåde, så en anden gruppe kunne følge den ("Først …, fordi …; derefter …").
 
 ## Det her træner I (så I ved hvorfor)
 
@@ -64,6 +65,8 @@ danner en ret vinkel. Hvor lang skal wiren mindst være?
 
 **Svar: __________ m**
 
+**(b) Forklar:** Hvorfor kan man overhovedet bruge Pythagoras' sætning netop her? Hvad er det ved trekanten (den rette vinkel), der gør, at a² + b² = c²? Tegn trekanten, og vis, hvilken side der er hypotenusen — og hvorfor.
+
 > 💡 **Hint:** Wiren er hypotenusen i en retvinklet trekant med kateterne 36 m og 27 m. Brug
 > Pythagoras: c = √(36² + 27²).
 >
@@ -102,6 +105,22 @@ tilfældigt **én** sikring. Hvad er sandsynligheden, i **procent**, for at I tr
 
 ---
 
+## 📊 Station 6: Iltloggen (statistik) — tæller *ikke* med i nødkoden
+
+Sensoren har logget iltniveauet (%) i lastrummet hver time i otte timer: **19, 21, 20, 18, 22, 20, 21, 19.**
+
+a) Find **middeltal**, **median** og **variationsbredde.**
+b) Vælg et **passende diagram** til at vise udviklingen over tid, og **begrund** valget.
+c) Alarmen udløses, hvis en måling kommer under **middeltallet.** Ved hvilke timer ville alarmen gå?
+
+**Svar (a): middeltal _______ · median _______ · variationsbredde _______**
+
+> 💡 **Hint:** Middeltal = læg alle tal sammen, og del med antallet (8). Median = det midterste tal, når de står i rækkefølge. Variationsbredde = største minus mindste.
+>
+> ⭐ **Ekstra:** Er middeltal eller median det mest retvisende "normaltal" her? Hvorfor?
+
+---
+
 ## 🔓 Luftslusen: nødkoden
 
 Saml jeres fem svar, og læg dem sammen:
@@ -127,3 +146,11 @@ bliver 4 dm × 10 dm × 4 dm.
 1. Hvor mange gange større bliver rumfanget?
 2. Hvor mange gange større bliver overfladearealet?
 3. Forklar med ord, hvorfor de to tal ikke er ens.
+
+---
+
+## 🫧 Modellerings-udfordring: Ilten skal række (tæller *ikke* med i nødkoden)
+
+Stationens iltbeholdning er beregnet til **4 personer i 9 timer.** Men I er **6 kadetter** om bord. Hvor længe rækker ilten nu?
+
+Opstil **selv** en model: Hvilke **antagelser** gør I (bruger alle lige meget? er forbruget jævnt)? Regn jeres svar ud. **Vurdér til sidst:** Hvad gør jeres model usikker i virkeligheden, og ville I stole på den med jeres liv?

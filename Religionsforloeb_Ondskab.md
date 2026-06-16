@@ -15,13 +15,14 @@
 Forløbet arbejder med kompetenceområderne *Livsfilosofi og etik*, *Kristendom* og *Ikke-kristne
 religioner og andre livsopfattelser*. Omsat til "Eleven kan…":
 
-- **Eleven kan skelne mellem og give eksempler på forskellige typer ondskab** (naturlig,
-  moralsk og banal ondskab).
-- **Eleven kan redegøre for, hvordan religioner forsøger at forklare ondskabens eksistens**
-  (teodicé-problemet, fri vilje, syndefald, dualisme).
-- **Eleven kan diskutere nuanceret**, om mennesket er født ondt eller godt, og hvad der skal til,
-  for at almindelige mennesker gør onde ting.
-- **Eleven kan koble begrebet ondskab til konkrete historiske begivenheder** (fx Holocaust).
+- **Eleven kan forholde sig til forskellige typer ondskab** (naturlig, moralsk og banal) og
+  **begrunde sine afgrænsninger**.
+- **Eleven kan tolke, hvordan religiøse fortællinger og forklaringer tyder ondskabens og lidelsens
+  problem** (teodicé-problemet, fri vilje, syndefald, Job, dualisme).
+- **Eleven kan diskutere nuanceret**, hvad der skal til, for at almindelige mennesker gør onde ting,
+  og **reflektere over ansvar**.
+- **Eleven kan forholde sig til og sammenligne flere religioners svar på, hvorfor lidelse findes**,
+  og koble den banale ondskab til konkrete historiske begivenheder (fx Holocaust).
 
 ---
 

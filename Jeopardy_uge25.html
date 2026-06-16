@@ -289,7 +289,97 @@ const ROUND2 = [
   ]},
 ];
 
-const ROUNDS = [ROUND1, ROUND2];
+const ROUND3 = [
+  { name:"Matematik", items:[
+    {v:100, q:"Hvad er ½ skrevet som procent?", a:"50 %"},
+    {v:200, q:"Hvad er omkredsen af et kvadrat med siden 5 cm?", a:"20 cm", note:"4 × 5"},
+    {v:300, q:"Hvad er gennemsnittet (middeltallet) af tallene 4, 8 og 9?", a:"7", note:"(4+8+9) ÷ 3 = 21 ÷ 3"},
+    {v:400, q:"Løs ligningen: 3x = 21.", a:"x = 7"},
+    {v:500, q:"Et fjernsyn koster 2.000 kr. og stiger 10 %. Hvad er den nye pris?", a:"2.200 kr.", note:"+200 kr."},
+  ]},
+  { name:"Historie", items:[
+    {v:100, q:"Hvad hed oldtidens store rige, der byggede Colosseum og blev styret af kejsere?", a:"Romerriget"},
+    {v:200, q:"Hvilken dansk konge gjorde ifølge Jellingstenen danerne kristne?", a:"Harald Blåtand", note:"kanon: Jellingstenen"},
+    {v:300, q:"Hvilken munk gjorde i 1517 op med den katolske kirke og startede reformationen?", a:"Martin Luther", note:"kanon: Reformationen"},
+    {v:400, q:"Hvilken revolution startede i 1789 med Stormen på Bastillen?", a:"Den Franske Revolution", dd:true, note:"kanon: Stormen på Bastillen"},
+    {v:500, q:"Hvad fik danske kvinder ret til ved grundlovsændringen i 1915?", a:"Valgret (stemmeret)", note:"kanon: Kvinders valgret"},
+  ]},
+  { name:"Religion", items:[
+    {v:100, q:"Hvilket symbol bruges mest om kristendommen?", a:"Korset"},
+    {v:200, q:"Hvad hedder det sted, hvor jøder mødes og beder?", a:"En synagoge"},
+    {v:300, q:"Hvad kaldes de fire skrifter i Det Nye Testamente om Jesu liv?", a:"Evangelierne", note:"Matthæus, Markus, Lukas, Johannes"},
+    {v:400, q:"Hvad hedder reglen 'Gør mod andre, som du vil have, at de gør mod dig'?", a:"Den gyldne regel", note:"findes i mange religioner"},
+    {v:500, q:"I etik: hvad kaldes tankegangen, hvor en handling vurderes på dens konsekvenser?", a:"Konsekvensetik (nytteetik)"},
+  ]},
+  { name:"Geografi", items:[
+    {v:100, q:"Hvad hedder Norges hovedstad?", a:"Oslo"},
+    {v:200, q:"Hvilket hav ligger mellem Danmark og Storbritannien?", a:"Nordsøen"},
+    {v:300, q:"Hvad kaldes et bjerg, der kan sprøjte lava ud?", a:"En vulkan"},
+    {v:400, q:"Hvilken stor regnskov ligger i Sydamerika?", a:"Amazonas (regnskoven)"},
+    {v:500, q:"Hvad kaldes en stor, langsomt bevægende ismasse i bjergene?", a:"En gletsjer"},
+  ]},
+  { name:"Fysik/kemi", items:[
+    {v:100, q:"Hvilken gas optager planterne fra luften, når de gror?", a:"Kuldioxid (CO₂)"},
+    {v:200, q:"Hvad kaldes overgangen fra væske til fast stof?", a:"Frysning (størkning)"},
+    {v:300, q:"Hvad er det kemiske symbol for kulstof (carbon)?", a:"C"},
+    {v:400, q:"Hvad måler man i enheden ampere (A)?", a:"Elektrisk strøm"},
+    {v:500, q:"Hvad kaldes tallet, der fortæller, hvor mange protoner et atom har?", a:"Atomnummer (grundstofnummer)"},
+  ]},
+  { name:"Blandet", items:[
+    {v:100, q:"Hvor mange sider har en sekskant?", a:"6"},
+    {v:200, q:"Hvilket organ pumper blodet rundt i kroppen?", a:"Hjertet"},
+    {v:300, q:"Hvad hedder verdens største ø?", a:"Grønland"},
+    {v:400, q:"Hvilket sprog har flest mennesker som modersmål?", a:"Kinesisk (mandarin)"},
+    {v:500, q:"Hvor mange knogler har et voksent menneske ca.?", a:"206"},
+  ]},
+];
+
+const ROUND4 = [
+  { name:"Matematik", items:[
+    {v:100, q:"Hvad er kvadratroden af 144?", a:"12"},
+    {v:200, q:"Hvad er 3³ (3 i tredje)?", a:"27", note:"3 × 3 × 3"},
+    {v:300, q:"Hvor mange grader er vinkelsummen i en trekant?", a:"180°"},
+    {v:400, q:"Rumfang af en cylinder med radius 2 cm og højde 10 cm? (π ≈ 3,14)", a:"ca. 125,6 cm³", dd:true, note:"π · r² · h = 3,14 · 4 · 10"},
+    {v:500, q:"1.000 kr. vokser 10 % to år i træk. Hvad er beløbet efter 2 år?", a:"1.210 kr.", dd:true, note:"1000 · 1,1 · 1,1 (rentes rente)"},
+  ]},
+  { name:"Historie", items:[
+    {v:100, q:"Hvilket år fik Danmark sin første grundlov?", a:"1849", note:"kanon: Grundloven"},
+    {v:200, q:"Hvad hed krigen i 1864, hvor Danmark mistede Slesvig og Holsten?", a:"Krigen i 1864 / Slaget ved Dybbøl", note:"kanon: Stormen på Dybbøl"},
+    {v:300, q:"Hvad hed spændingen mellem USA og Sovjetunionen efter 1945 uden direkte krig?", a:"Den Kolde Krig", dd:true},
+    {v:400, q:"Hvilken egyptisk dronning var kendt for sit forhold til Cæsar og Marcus Antonius?", a:"Cleopatra"},
+    {v:500, q:"Hvad hed forliget i 1933, der reddede dansk økonomi i krisen?", a:"Kanslergadeforliget", dd:true, note:"kanon: Kanslergadeforliget"},
+  ]},
+  { name:"Religion", items:[
+    {v:100, q:"Hvad hedder profeten, der grundlagde islam?", a:"Muhammad"},
+    {v:200, q:"Hvad kaldes de fem pligter i islam (trosbekendelse, bøn, faste, almisse, pilgrimsfærd)?", a:"Islams fem søjler", dd:true},
+    {v:300, q:"Hvad kaldes problemet: hvis Gud er god og almægtig, hvorfor findes ondskab?", a:"Teodicé-problemet", note:"fra Ondskab-forløbet"},
+    {v:400, q:"Hvilken etik (Løgstrup) handler om ansvaret for den, der står foran dig?", a:"Nærhedsetik", dd:true},
+    {v:500, q:"Hvad kaldte Hannah Arendt det, når almindelige mennesker gør ondt ved bare at følge ordrer?", a:"Den banale ondskab", note:"om Eichmann"},
+  ]},
+  { name:"Geografi", items:[
+    {v:100, q:"Hvad hedder Tysklands hovedstad?", a:"Berlin"},
+    {v:200, q:"Hvilken flod regnes for verdens længste? (Nilen eller Amazonfloden godtages)", a:"Nilen / Amazonfloden", note:"forskere er uenige"},
+    {v:300, q:"Hvad kaldes grænsen, hvor to af Jordens plader mødes og giver jordskælv?", a:"En pladegrænse (forkastning)", dd:true},
+    {v:400, q:"Hvilket land er størst i verden målt på areal?", a:"Rusland"},
+    {v:500, q:"Hvad kaldes klimabæltet omkring ækvator med høj varme og megen regn?", a:"Troperne (tropisk klima)", dd:true},
+  ]},
+  { name:"Fysik/kemi", items:[
+    {v:100, q:"Hvad er det kemiske symbol for natrium?", a:"Na"},
+    {v:200, q:"Hvad kaldes en blanding af to eller flere metaller, fx bronze?", a:"En legering"},
+    {v:300, q:"Hvad er pH-værdien for en neutral væske som rent vand?", a:"7", dd:true},
+    {v:400, q:"Hvilken partikel i atomet er negativt ladet?", a:"Elektronen"},
+    {v:500, q:"Newtons 2. lov: kraft = masse gange hvad?", a:"Acceleration (F = m · a)", dd:true},
+  ]},
+  { name:"Blandet", items:[
+    {v:100, q:"Hvor mange minutter er der i et døgn?", a:"1440", note:"24 × 60"},
+    {v:200, q:"Hvad er det største landdyr på Jorden?", a:"Den afrikanske elefant"},
+    {v:300, q:"Hvilket grundstof har det kemiske symbol Fe?", a:"Jern"},
+    {v:400, q:"Hvem skrev tragedien 'Hamlet'?", a:"William Shakespeare", dd:true},
+    {v:500, q:"Hvor lang tid tager lyset fra Solen ca. om at nå Jorden?", a:"Ca. 8 minutter", dd:true},
+  ]},
+];
+
+const ROUNDS = [ROUND1, ROUND2, ROUND3, ROUND4];
 
 const GOALS = [
   { fag:"Matematik", omr:"Fælles Mål · Geometri og måling", mal:[
@@ -435,9 +525,12 @@ document.getElementById("reset").addEventListener("click",()=>{
 
 /* ---------- Round switch ---------- */
 const roundBtn=document.getElementById("roundBtn");
-function setRoundLabel(){ roundBtn.textContent = "🔁 Runde " + (state.round+1) + (state.round===0 ? " ▸ 2" : " ▸ 1"); }
+function setRoundLabel(){
+  const next = (state.round + 1) % ROUNDS.length;
+  roundBtn.textContent = "🔁 Runde " + (state.round + 1) + "/" + ROUNDS.length + " ▸ " + (next + 1);
+}
 roundBtn.addEventListener("click",()=>{
-  state.round = state.round===0 ? 1 : 0;
+  state.round = (state.round + 1) % ROUNDS.length;
   CATEGORIES = ROUNDS[state.round];
   state.used = [];
   save(); setRoundLabel(); renderBoard();

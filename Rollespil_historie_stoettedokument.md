@@ -11,12 +11,14 @@
 Hvert scenarie køres i tre skridt:
 
 1. **Forstå situationen:** læs scenariet og fordel rollerne (én pr. elev).
-2. **Læs kilden.** Hver gruppe får en kilde til scenariet. Lav hurtig **kildekritik**: Hvem har lavet den? Hvornår? Hvorfor? Hvilken **tendens** har den (hvilket synspunkt trækker den i)?
+2. **Læs kilden.** Hver gruppe får en kilde til scenariet. Lav hurtig **kildekritik**: Hvem har lavet den? Hvornår? Hvorfor? Hvilken **tendens** har den (hvilket synspunkt trækker den i)? Find om muligt en **modkilde** med en anden tendens (se fx Scenarie C), og sammenlign. Historie er fortolkning, og der er ofte flere lødige fortællinger om den samme hændelse.
 3. **Spil scenen.** Argumentér i din rolle, og brug mindst ét argument, der bygger på kilden ("Her står der …, derfor mener jeg …"). En **ordstyrer** leder mødet. Bagefter træder I ud af rollen og snakker.
 
 **Roller i gruppen:** udover spil-rollerne vælger I en **ordstyrer** (leder mødet) og en **kildetjekker** (holder øje med, at I bruger kilden).
 
 > **Et godt fagligt argument** i historie nøjes ikke med "det ville jeg føle". Det lyder: *"Ud fra kilden ved vi …, og derfor ville min person mene …"*. Kilden er jeres bevis.
+
+> **Inden I spiller — jeres problemstilling.** Skriv ét **undersøgelsesspørgsmål**, jeres scene skal belyse (fx *"Var det rigtigt af regeringen at samarbejde i 1940?"* eller *"Kan man dømme folk efter love, der laves bagefter?"*). Et godt spørgsmål kan ikke besvares med ja/nej ud fra én kilde. Det kræver, at I vejer flere hensyn. Det er den slags spørgsmål, I selv skal stille til den mundtlige prøve.
 
 ---
 
@@ -32,6 +34,8 @@ Tegn en tidslinje, og placér de fire datoer. De forklarer, *hvorfor* tingene sk
 | **4.–5. maj 1945** | Danmark **befries** |
 
 **Undersøg:** Hvorfor kom jødeaktionen først i oktober 1943 og ikke allerede i 1940? *(Tip: Hvad havde beskyttet de danske jøder indtil august 1943? Hvad skete der så?)*
+
+> *Bro til kanonen:* Jødeaktionen 1943 er ét af de 30 nedslag i historiekanonen. Sæt den ind i den lange linje: Hvilke **andre** kanonnedslag handler også om menneskers rettigheder og overgreb (fx Ophævelse af slavehandelen, FN's Verdenserklæring om Menneskerettigheder 1948)? Hvad har de til fælles?
 
 ---
 
@@ -68,6 +72,8 @@ Krigen er slut. En by skal forholde sig til "det store opgør": hvad sker der me
 > **Kilde C – retsopgøret.** Efter befrielsen indførte Danmark med tilbagevirkende kraft strengere straffe, endda dødsstraf, som havde været afskaffet. Omkring 13.000 mennesker blev dømt for samarbejde med besættelsesmagten, og 46 blev henrettet. Det blev voldsomt diskuteret, om det var retfærdigt at straffe folk efter love, der blev lavet *bagefter*. *(Læs mere: danmarkshistorien.dk, søg "retsopgøret efter besættelsen".)*
 >
 > **Kildekritik:** Er en avis eller et opslag fra sejrsdagene i maj 1945 en neutral kilde? Hvilke følelser præger en kilde, der er lavet lige efter en krig?
+>
+> **Kilde C2 – et andet syn.** Find en kilde, der **forsvarede** samarbejdspolitikken eller var **kritisk** over for retsopgøret (fx et forsvarsindlæg fra en anklaget eller en senere historikervurdering på danmarkshistorien.dk). Sammenlign tendensen i Kilde C og C2: *Hvor er de uenige om, hvad der skete, og hvorfor?* **Hvilken er mest lødig, og hvad bygger I det på?**
 
 **Roller:** en modstandsmand (vil have retfærdighed) · en, der samarbejdede med tyskerne (forsvarer sine valg) · en dommer (skal sikre en fair rettergang) · en journalist (vil have sandheden frem) · en almindelig borger (vil bare videre med livet).
 
@@ -80,6 +86,8 @@ Krigen er slut. En by skal forholde sig til "det store opgør": hvad sker der me
 1. **Træd ud af rollen:** Hvad var svært ved din rolle? Var der nogen, der "havde ret"?
 2. **Civilkurage i dag:** I 1943 turde mange almindelige mennesker hjælpe. Hvor ser vi mod, eller mangel på mod, i dag?
 3. **Opgør i dag:** Hvordan gør samfund i dag op med fortiden efter en krig eller et diktatur (fx sandhedskommissioner)? Er "hævn eller retfærdighed?" stadig et levende spørgsmål?
+
+**Mini-produkt (historiebrug):** Vælg ét nutidigt eksempel, hvor besættelsestiden *bruges* i dag (mindehøjtideligheder 4. maj, film, eller politiske udsagn om "modstand" og "samarbejde"). Forklar i 4–5 sætninger: Hvad bruges fortiden til? Hvilket billede af 1940–45 tegner det, og hvad udelades?
 
 ## Produkt (afleveres)
 
