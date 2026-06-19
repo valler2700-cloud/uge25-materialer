@@ -198,11 +198,14 @@ def convert(md_path, docx_path):
 import glob
 
 def build_all():
-    """Byg alle *.md i scriptets mappe til matchende .docx (springer README over)."""
+    """Byg alle *.md under scriptets mappe (også i fagmapper) til matchende .docx.
+    Springer README over. Billedstier i .md løses fortsat mod BASE (rod-mappen)."""
     SKIP = {'README.md'}
+    SKIP_DIRS = {'docs'}  # udviklings-noter, ikke undervisningsmateriale
     built = 0
-    for md in sorted(glob.glob(os.path.join(BASE, '*.md'))):
-        if os.path.basename(md) in SKIP:
+    for md in sorted(glob.glob(os.path.join(BASE, '**', '*.md'), recursive=True)):
+        rel = os.path.relpath(md, BASE)
+        if os.path.basename(md) in SKIP or rel.split(os.sep)[0] in SKIP_DIRS:
             continue
         convert(md, md[:-3] + '.docx')
         built += 1

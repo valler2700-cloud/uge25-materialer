@@ -22,3 +22,7 @@ Vurdering_matematik_uge25.docx
 # Udviklings-artefakter (ikke undervisningsmateriale) — bevaret i git-historikken
 docs/
 tests/
+
+# Python-bytecode fra build_docx.py
+__pycache__/
+*.pyc
